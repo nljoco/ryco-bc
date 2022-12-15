@@ -1,0 +1,28 @@
+page 50001 "BOM Instruction List"
+{
+    SourceTable = "BOM Instruction";
+
+    layout
+    {
+        area(content)
+        {
+            repeater(Group)
+            {
+                field("Code"; Rec.Code)
+                {
+                }
+                field(Description; Rec.Description)
+                {
+                }
+                field(Dryer; Rec.Dryer)
+                {
+                }
+            }
+        }
+    }
+
+    actions
+    {
+    }
+}
+

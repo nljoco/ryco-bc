@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://bcserver",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default"
+        },
+        {
+            "name": "Sandbox01",
+            "type": "al",
+            "request": "launch",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "breakOnRecordWrite": false,
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "server": "https://businesscentral.dynamics.com/17c0d57c-f1aa-451e-95a3-79cca91566d1/Sandbox0001",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox01",
+            "serverInstance": "AAD",
+            "schemaUpdateMode": "Synchronize",
+            "tenant": "17c0d57c-f1aa-451e-95a3-79cca91566d1"
+        }
+    ]
+}
