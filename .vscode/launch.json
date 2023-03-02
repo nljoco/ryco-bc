@@ -18,7 +18,7 @@
             "tenant": "default"
         },
         {
-            "name": "Sandbox01",
+            "name": "sandbox20221215",
             "type": "al",
             "request": "launch",
             "startupObjectId": 22,
@@ -30,12 +30,33 @@
             "enableLongRunningSqlStatements": true,
             "longRunningSqlStatementsThreshold": 500,
             "numberOfSqlStatements": 10,
-            "server": "https://businesscentral.dynamics.com/17c0d57c-f1aa-451e-95a3-79cca91566d1/Sandbox0001",
+            "server": "https://businesscentral.dynamics.com/e110b56d-cbfc-4c3a-a6bd-af08365cfccc",
             "environmentType": "Sandbox",
-            "environmentName": "Sandbox01",
+            "environmentName": "sandbox20221215",
             "serverInstance": "AAD",
             "schemaUpdateMode": "Synchronize",
-            "tenant": "17c0d57c-f1aa-451e-95a3-79cca91566d1"
+            "tenant": "e110b56d-cbfc-4c3a-a6bd-af08365cfccc"
+        },
+        {
+            "name": "Sandbox",
+            "type": "al",
+            "request": "launch",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "breakOnRecordWrite": false,
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "server": "https://businesscentral.dynamics.com/e110b56d-cbfc-4c3a-a6bd-af08365cfccc",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "serverInstance": "AAD",
+            "schemaUpdateMode": "Synchronize",
+            "tenant": "e110b56d-cbfc-4c3a-a6bd-af08365cfccc"
+        }
         }
     ]
 }

@@ -1,8 +1,8 @@
-report 50001 "Packing Slip"
+report 50001 "Packing Slip Rycoline"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50001.RYCO_PackingSlip.rdlc';
-    Caption = 'Packing Slip';
+    Caption = 'Ryco Packing Slip';
 
     dataset
     {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -11,591 +11,6 @@
       <rd:DataSourceID>a9d36e80-4c12-404c-9f4c-5e0f505e56a5</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="GenJnlLine_Journal_Template_Name">
-          <DataField>GenJnlLine_Journal_Template_Name</DataField>
-        </Field>
-        <Field Name="GenJnlLine_Journal_Batch_Name">
-          <DataField>GenJnlLine_Journal_Batch_Name</DataField>
-        </Field>
-        <Field Name="GenJnlLine_Line_No_">
-          <DataField>GenJnlLine_Line_No_</DataField>
-        </Field>
-        <Field Name="CheckToAddr_1_">
-          <DataField>CheckToAddr_1_</DataField>
-        </Field>
-        <Field Name="CheckDateText">
-          <DataField>CheckDateText</DataField>
-        </Field>
-        <Field Name="CheckNoText">
-          <DataField>CheckNoText</DataField>
-        </Field>
-        <Field Name="PageNo">
-          <DataField>PageNo</DataField>
-        </Field>
-        <Field Name="CheckPages_Number">
-          <DataField>CheckPages_Number</DataField>
-        </Field>
-        <Field Name="CheckNoTextCaption">
-          <DataField>CheckNoTextCaption</DataField>
-        </Field>
-        <Field Name="PreprintedStub">
-          <DataField>PreprintedStub</DataField>
-        </Field>
-        <Field Name="LineAmount">
-          <DataField>LineAmount</DataField>
-        </Field>
-        <Field Name="LineAmountFormat">
-          <DataField>LineAmountFormat</DataField>
-        </Field>
-        <Field Name="LineDiscount">
-          <DataField>LineDiscount</DataField>
-        </Field>
-        <Field Name="LineDiscountFormat">
-          <DataField>LineDiscountFormat</DataField>
-        </Field>
-        <Field Name="LineAmount___LineDiscount">
-          <DataField>LineAmount___LineDiscount</DataField>
-        </Field>
-        <Field Name="LineAmount___LineDiscountFormat">
-          <DataField>LineAmount___LineDiscountFormat</DataField>
-        </Field>
-        <Field Name="DocNo">
-          <DataField>DocNo</DataField>
-        </Field>
-        <Field Name="DocDate">
-          <DataField>DocDate</DataField>
-        </Field>
-        <Field Name="PostingDesc">
-          <DataField>PostingDesc</DataField>
-        </Field>
-        <Field Name="PrintSettledLoop_Number">
-          <DataField>PrintSettledLoop_Number</DataField>
-        </Field>
-        <Field Name="LineAmountCaption">
-          <DataField>LineAmountCaption</DataField>
-        </Field>
-        <Field Name="LineDiscountCaption">
-          <DataField>LineDiscountCaption</DataField>
-        </Field>
-        <Field Name="DocNoCaption">
-          <DataField>DocNoCaption</DataField>
-        </Field>
-        <Field Name="DocDateCaption">
-          <DataField>DocDateCaption</DataField>
-        </Field>
-        <Field Name="Posting_DescriptionCaption">
-          <DataField>Posting_DescriptionCaption</DataField>
-        </Field>
-        <Field Name="AmountCaption">
-          <DataField>AmountCaption</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_5_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__CA_5_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_4_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__CA_4_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_3_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__CA_3_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_2_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__CA_2_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_1_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__CA_1_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckAmountText_CheckStyle__US_">
-          <DataField>PrnChkCheckAmountText_CheckStyle__US_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckDateText_CheckStyle__US_">
-          <DataField>PrnChkCheckDateText_CheckStyle__US_</DataField>
-        </Field>
-        <Field Name="PrnChkDescriptionLine_CheckStyle__US_2_">
-          <DataField>PrnChkDescriptionLine_CheckStyle__US_2_</DataField>
-        </Field>
-        <Field Name="PrnChkDescriptionLine_CheckStyle__US_1_">
-          <DataField>PrnChkDescriptionLine_CheckStyle__US_1_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__US_1_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__US_1_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__US_2_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__US_2_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__US_4_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__US_4_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__US_3_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__US_3_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckToAddr_CheckStyle__US_5_">
-          <DataField>PrnChkCheckToAddr_CheckStyle__US_5_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__US_4_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__US_4_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__US_6_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__US_6_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__US_5_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__US_5_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__US_3_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__US_3_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckNoText_CheckStyle__US_">
-          <DataField>PrnChkCheckNoText_CheckStyle__US_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__US_2_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__US_2_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__US_1_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__US_1_</DataField>
-        </Field>
-        <Field Name="TotalLineAmount">
-          <DataField>TotalLineAmount</DataField>
-        </Field>
-        <Field Name="TotalLineAmountFormat">
-          <DataField>TotalLineAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalText">
-          <DataField>TotalText</DataField>
-        </Field>
-        <Field Name="PrnChkVoidText_CheckStyle__US_">
-          <DataField>PrnChkVoidText_CheckStyle__US_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_1_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__CA_1_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_2_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__CA_2_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_3_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__CA_3_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_4_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__CA_4_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_5_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__CA_5_</DataField>
-        </Field>
-        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_6_">
-          <DataField>PrnChkCompanyAddr_CheckStyle__CA_6_</DataField>
-        </Field>
-        <Field Name="PrnChkDescriptionLine_CheckStyle__CA_1_">
-          <DataField>PrnChkDescriptionLine_CheckStyle__CA_1_</DataField>
-        </Field>
-        <Field Name="PrnChkDescriptionLine_CheckStyle__CA_2_">
-          <DataField>PrnChkDescriptionLine_CheckStyle__CA_2_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckDateText_CheckStyle__CA_">
-          <DataField>PrnChkCheckDateText_CheckStyle__CA_</DataField>
-        </Field>
-        <Field Name="PrnChkDateIndicator_CheckStyle__CA_">
-          <DataField>PrnChkDateIndicator_CheckStyle__CA_</DataField>
-        </Field>
-        <Field Name="PrnChkCheckAmountText_CheckStyle__CA_">
-          <DataField>PrnChkCheckAmountText_CheckStyle__CA_</DataField>
-        </Field>
-        <Field Name="PrnChkVoidText_CheckStyle__CA_">
-          <DataField>PrnChkVoidText_CheckStyle__CA_</DataField>
-        </Field>
-        <Field Name="PrnChkCurrencyCode_CheckStyle__CA_">
-          <DataField>PrnChkCurrencyCode_CheckStyle__CA_</DataField>
-        </Field>
-        <Field Name="PrnChkCurrencyCode_CheckStyle__US_">
-          <DataField>PrnChkCurrencyCode_CheckStyle__US_</DataField>
-        </Field>
-        <Field Name="CheckNoText_Control1480000">
-          <DataField>CheckNoText_Control1480000</DataField>
-        </Field>
-        <Field Name="CheckDateText_Control1480021">
-          <DataField>CheckDateText_Control1480021</DataField>
-        </Field>
-        <Field Name="CheckToAddr_1__Control1480022">
-          <DataField>CheckToAddr_1__Control1480022</DataField>
-        </Field>
-        <Field Name="Stub2DocNoHeader">
-          <DataField>Stub2DocNoHeader</DataField>
-        </Field>
-        <Field Name="Stub2DocDateHeader">
-          <DataField>Stub2DocDateHeader</DataField>
-        </Field>
-        <Field Name="Stub2AmountHeader">
-          <DataField>Stub2AmountHeader</DataField>
-        </Field>
-        <Field Name="Stub2DiscountHeader">
-          <DataField>Stub2DiscountHeader</DataField>
-        </Field>
-        <Field Name="Stub2NetAmountHeader">
-          <DataField>Stub2NetAmountHeader</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_1_">
-          <DataField>Stub2LineAmount_1_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_1_Format">
-          <DataField>Stub2LineAmount_1_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_1_">
-          <DataField>Stub2LineDiscount_1_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_1_Format">
-          <DataField>Stub2LineDiscount_1_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_1____Stub2LineDiscount_1_">
-          <DataField>Stub2LineAmount_1____Stub2LineDiscount_1_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_1____Stub2LineDiscount_1_Format">
-          <DataField>Stub2LineAmount_1____Stub2LineDiscount_1_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_1_">
-          <DataField>Stub2DocDate_1_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_1_">
-          <DataField>Stub2DocNo_1_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_2_">
-          <DataField>Stub2LineAmount_2_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_2_Format">
-          <DataField>Stub2LineAmount_2_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_2_">
-          <DataField>Stub2LineDiscount_2_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_2_Format">
-          <DataField>Stub2LineDiscount_2_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_2____Stub2LineDiscount_2_">
-          <DataField>Stub2LineAmount_2____Stub2LineDiscount_2_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_2____Stub2LineDiscount_2_Format">
-          <DataField>Stub2LineAmount_2____Stub2LineDiscount_2_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_2_">
-          <DataField>Stub2DocDate_2_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_2_">
-          <DataField>Stub2DocNo_2_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_3_">
-          <DataField>Stub2LineAmount_3_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_3_Format">
-          <DataField>Stub2LineAmount_3_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_3_">
-          <DataField>Stub2LineDiscount_3_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_3_Format">
-          <DataField>Stub2LineDiscount_3_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_3____Stub2LineDiscount_3_">
-          <DataField>Stub2LineAmount_3____Stub2LineDiscount_3_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_3____Stub2LineDiscount_3_Format">
-          <DataField>Stub2LineAmount_3____Stub2LineDiscount_3_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_3_">
-          <DataField>Stub2DocDate_3_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_3_">
-          <DataField>Stub2DocNo_3_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_4_">
-          <DataField>Stub2LineAmount_4_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_4_Format">
-          <DataField>Stub2LineAmount_4_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_4_">
-          <DataField>Stub2LineDiscount_4_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_4_Format">
-          <DataField>Stub2LineDiscount_4_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_4____Stub2LineDiscount_4_">
-          <DataField>Stub2LineAmount_4____Stub2LineDiscount_4_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_4____Stub2LineDiscount_4_Format">
-          <DataField>Stub2LineAmount_4____Stub2LineDiscount_4_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_4_">
-          <DataField>Stub2DocDate_4_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_4_">
-          <DataField>Stub2DocNo_4_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_5_">
-          <DataField>Stub2LineAmount_5_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_5_Format">
-          <DataField>Stub2LineAmount_5_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_5_">
-          <DataField>Stub2LineDiscount_5_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_5_Format">
-          <DataField>Stub2LineDiscount_5_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_5____Stub2LineDiscount_5_">
-          <DataField>Stub2LineAmount_5____Stub2LineDiscount_5_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_5____Stub2LineDiscount_5_Format">
-          <DataField>Stub2LineAmount_5____Stub2LineDiscount_5_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_5_">
-          <DataField>Stub2DocDate_5_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_5_">
-          <DataField>Stub2DocNo_5_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_6_">
-          <DataField>Stub2LineAmount_6_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_6_Format">
-          <DataField>Stub2LineAmount_6_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_6_">
-          <DataField>Stub2LineDiscount_6_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_6_Format">
-          <DataField>Stub2LineDiscount_6_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_6____Stub2LineDiscount_6_">
-          <DataField>Stub2LineAmount_6____Stub2LineDiscount_6_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_6____Stub2LineDiscount_6_Format">
-          <DataField>Stub2LineAmount_6____Stub2LineDiscount_6_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_6_">
-          <DataField>Stub2DocDate_6_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_6_">
-          <DataField>Stub2DocNo_6_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_7_">
-          <DataField>Stub2LineAmount_7_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_7_Format">
-          <DataField>Stub2LineAmount_7_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_7_">
-          <DataField>Stub2LineDiscount_7_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_7_Format">
-          <DataField>Stub2LineDiscount_7_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_7____Stub2LineDiscount_7_">
-          <DataField>Stub2LineAmount_7____Stub2LineDiscount_7_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_7____Stub2LineDiscount_7_Format">
-          <DataField>Stub2LineAmount_7____Stub2LineDiscount_7_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_7_">
-          <DataField>Stub2DocDate_7_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_7_">
-          <DataField>Stub2DocNo_7_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_8_">
-          <DataField>Stub2LineAmount_8_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_8_Format">
-          <DataField>Stub2LineAmount_8_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_8_">
-          <DataField>Stub2LineDiscount_8_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_8_Format">
-          <DataField>Stub2LineDiscount_8_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_8____Stub2LineDiscount_8_">
-          <DataField>Stub2LineAmount_8____Stub2LineDiscount_8_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_8____Stub2LineDiscount_8_Format">
-          <DataField>Stub2LineAmount_8____Stub2LineDiscount_8_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_8_">
-          <DataField>Stub2DocDate_8_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_8_">
-          <DataField>Stub2DocNo_8_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_9_">
-          <DataField>Stub2LineAmount_9_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_9_Format">
-          <DataField>Stub2LineAmount_9_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_9_">
-          <DataField>Stub2LineDiscount_9_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_9_Format">
-          <DataField>Stub2LineDiscount_9_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_9____Stub2LineDiscount_9_">
-          <DataField>Stub2LineAmount_9____Stub2LineDiscount_9_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_9____Stub2LineDiscount_9_Format">
-          <DataField>Stub2LineAmount_9____Stub2LineDiscount_9_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_9_">
-          <DataField>Stub2DocDate_9_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_9_">
-          <DataField>Stub2DocNo_9_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_10_">
-          <DataField>Stub2LineAmount_10_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_10_Format">
-          <DataField>Stub2LineAmount_10_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_10_">
-          <DataField>Stub2LineDiscount_10_</DataField>
-        </Field>
-        <Field Name="Stub2LineDiscount_10_Format">
-          <DataField>Stub2LineDiscount_10_Format</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_10____Stub2LineDiscount_10_">
-          <DataField>Stub2LineAmount_10____Stub2LineDiscount_10_</DataField>
-        </Field>
-        <Field Name="Stub2LineAmount_10____Stub2LineDiscount_10_Format">
-          <DataField>Stub2LineAmount_10____Stub2LineDiscount_10_Format</DataField>
-        </Field>
-        <Field Name="Stub2DocDate_10_">
-          <DataField>Stub2DocDate_10_</DataField>
-        </Field>
-        <Field Name="Stub2DocNo_10_">
-          <DataField>Stub2DocNo_10_</DataField>
-        </Field>
-        <Field Name="TotalLineAmount_Control1480082">
-          <DataField>TotalLineAmount_Control1480082</DataField>
-        </Field>
-        <Field Name="TotalLineAmount_Control1480082Format">
-          <DataField>TotalLineAmount_Control1480082Format</DataField>
-        </Field>
-        <Field Name="TotalText_Control1480083">
-          <DataField>TotalText_Control1480083</DataField>
-        </Field>
-        <Field Name="Stub2PostingDescHeader">
-          <DataField>Stub2PostingDescHeader</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_1_">
-          <DataField>Stub2PostingDesc_1_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_2_">
-          <DataField>Stub2PostingDesc_2_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_4_">
-          <DataField>Stub2PostingDesc_4_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_3_">
-          <DataField>Stub2PostingDesc_3_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_8_">
-          <DataField>Stub2PostingDesc_8_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_7_">
-          <DataField>Stub2PostingDesc_7_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_6_">
-          <DataField>Stub2PostingDesc_6_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_5_">
-          <DataField>Stub2PostingDesc_5_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_10_">
-          <DataField>Stub2PostingDesc_10_</DataField>
-        </Field>
-        <Field Name="Stub2PostingDesc_9_">
-          <DataField>Stub2PostingDesc_9_</DataField>
-        </Field>
-        <Field Name="CheckToAddr_5_">
-          <DataField>CheckToAddr_5_</DataField>
-        </Field>
-        <Field Name="CheckToAddr_4_">
-          <DataField>CheckToAddr_4_</DataField>
-        </Field>
-        <Field Name="CheckToAddr_3_">
-          <DataField>CheckToAddr_3_</DataField>
-        </Field>
-        <Field Name="CheckToAddr_2_">
-          <DataField>CheckToAddr_2_</DataField>
-        </Field>
-        <Field Name="CheckToAddr_01_">
-          <DataField>CheckToAddr_01_</DataField>
-        </Field>
-        <Field Name="VoidText">
-          <DataField>VoidText</DataField>
-        </Field>
-        <Field Name="BankCurrencyCode">
-          <DataField>BankCurrencyCode</DataField>
-        </Field>
-        <Field Name="DollarSignBefore_CheckAmountText_DollarSignAfter">
-          <DataField>DollarSignBefore_CheckAmountText_DollarSignAfter</DataField>
-        </Field>
-        <Field Name="DescriptionLine_1__">
-          <DataField>DescriptionLine_1__</DataField>
-        </Field>
-        <Field Name="DescriptionLine_2__">
-          <DataField>DescriptionLine_2__</DataField>
-        </Field>
-        <Field Name="DateIndicator">
-          <DataField>DateIndicator</DataField>
-        </Field>
-        <Field Name="CheckDateText_Control1020013">
-          <DataField>CheckDateText_Control1020013</DataField>
-        </Field>
-        <Field Name="CheckNoText_Control1020014">
-          <DataField>CheckNoText_Control1020014</DataField>
-        </Field>
-        <Field Name="CompanyAddr_6_">
-          <DataField>CompanyAddr_6_</DataField>
-        </Field>
-        <Field Name="CompanyAddr_5_">
-          <DataField>CompanyAddr_5_</DataField>
-        </Field>
-        <Field Name="CompanyAddr_4_">
-          <DataField>CompanyAddr_4_</DataField>
-        </Field>
-        <Field Name="CompanyAddr_3_">
-          <DataField>CompanyAddr_3_</DataField>
-        </Field>
-        <Field Name="CompanyAddr_2_">
-          <DataField>CompanyAddr_2_</DataField>
-        </Field>
-        <Field Name="CompanyAddr_1_">
-          <DataField>CompanyAddr_1_</DataField>
-        </Field>
-        <Field Name="CheckStyleIndex">
-          <DataField>CheckStyleIndex</DataField>
-        </Field>
-        <Field Name="CompanyAddr_7_">
-          <DataField>CompanyAddr_7_</DataField>
-        </Field>
-        <Field Name="PrintCheck_Number">
-          <DataField>PrintCheck_Number</DataField>
-        </Field>
-        <Field Name="CheckNoText_Control1480000Caption">
-          <DataField>CheckNoText_Control1480000Caption</DataField>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSet</rd:DataSetName>
-        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
-        <rd:TableName>Result</rd:TableName>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -3857,12 +3272,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -3902,4 +3311,584 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>7816eb05-7d8e-4ccb-a667-0dd1b4dc95f5</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="GenJnlLine_Journal_Template_Name">
+          <DataField>GenJnlLine_Journal_Template_Name</DataField>
+        </Field>
+        <Field Name="GenJnlLine_Journal_Batch_Name">
+          <DataField>GenJnlLine_Journal_Batch_Name</DataField>
+        </Field>
+        <Field Name="GenJnlLine_Line_No_">
+          <DataField>GenJnlLine_Line_No_</DataField>
+        </Field>
+        <Field Name="CheckToAddr_1_">
+          <DataField>CheckToAddr_1_</DataField>
+        </Field>
+        <Field Name="CheckDateText">
+          <DataField>CheckDateText</DataField>
+        </Field>
+        <Field Name="CheckNoText">
+          <DataField>CheckNoText</DataField>
+        </Field>
+        <Field Name="PageNo">
+          <DataField>PageNo</DataField>
+        </Field>
+        <Field Name="CheckPages_Number">
+          <DataField>CheckPages_Number</DataField>
+        </Field>
+        <Field Name="CheckNoTextCaption">
+          <DataField>CheckNoTextCaption</DataField>
+        </Field>
+        <Field Name="PreprintedStub">
+          <DataField>PreprintedStub</DataField>
+        </Field>
+        <Field Name="LineAmount">
+          <DataField>LineAmount</DataField>
+        </Field>
+        <Field Name="LineAmountFormat">
+          <DataField>LineAmountFormat</DataField>
+        </Field>
+        <Field Name="LineDiscount">
+          <DataField>LineDiscount</DataField>
+        </Field>
+        <Field Name="LineDiscountFormat">
+          <DataField>LineDiscountFormat</DataField>
+        </Field>
+        <Field Name="LineAmount___LineDiscount">
+          <DataField>LineAmount___LineDiscount</DataField>
+        </Field>
+        <Field Name="LineAmount___LineDiscountFormat">
+          <DataField>LineAmount___LineDiscountFormat</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="DocDate">
+          <DataField>DocDate</DataField>
+        </Field>
+        <Field Name="PostingDesc">
+          <DataField>PostingDesc</DataField>
+        </Field>
+        <Field Name="PrintSettledLoop_Number">
+          <DataField>PrintSettledLoop_Number</DataField>
+        </Field>
+        <Field Name="LineAmountCaption">
+          <DataField>LineAmountCaption</DataField>
+        </Field>
+        <Field Name="LineDiscountCaption">
+          <DataField>LineDiscountCaption</DataField>
+        </Field>
+        <Field Name="DocNoCaption">
+          <DataField>DocNoCaption</DataField>
+        </Field>
+        <Field Name="DocDateCaption">
+          <DataField>DocDateCaption</DataField>
+        </Field>
+        <Field Name="Posting_DescriptionCaption">
+          <DataField>Posting_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="AmountCaption">
+          <DataField>AmountCaption</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_5_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__CA_5_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_4_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__CA_4_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_3_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__CA_3_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_2_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__CA_2_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__CA_1_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__CA_1_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckAmountText_CheckStyle__US_">
+          <DataField>PrnChkCheckAmountText_CheckStyle__US_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckDateText_CheckStyle__US_">
+          <DataField>PrnChkCheckDateText_CheckStyle__US_</DataField>
+        </Field>
+        <Field Name="PrnChkDescriptionLine_CheckStyle__US_2_">
+          <DataField>PrnChkDescriptionLine_CheckStyle__US_2_</DataField>
+        </Field>
+        <Field Name="PrnChkDescriptionLine_CheckStyle__US_1_">
+          <DataField>PrnChkDescriptionLine_CheckStyle__US_1_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__US_1_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__US_1_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__US_2_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__US_2_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__US_4_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__US_4_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__US_3_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__US_3_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckToAddr_CheckStyle__US_5_">
+          <DataField>PrnChkCheckToAddr_CheckStyle__US_5_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__US_4_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__US_4_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__US_6_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__US_6_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__US_5_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__US_5_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__US_3_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__US_3_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckNoText_CheckStyle__US_">
+          <DataField>PrnChkCheckNoText_CheckStyle__US_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__US_2_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__US_2_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__US_1_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__US_1_</DataField>
+        </Field>
+        <Field Name="TotalLineAmount">
+          <DataField>TotalLineAmount</DataField>
+        </Field>
+        <Field Name="TotalLineAmountFormat">
+          <DataField>TotalLineAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalText">
+          <DataField>TotalText</DataField>
+        </Field>
+        <Field Name="PrnChkVoidText_CheckStyle__US_">
+          <DataField>PrnChkVoidText_CheckStyle__US_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_1_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__CA_1_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_2_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__CA_2_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_3_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__CA_3_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_4_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__CA_4_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_5_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__CA_5_</DataField>
+        </Field>
+        <Field Name="PrnChkCompanyAddr_CheckStyle__CA_6_">
+          <DataField>PrnChkCompanyAddr_CheckStyle__CA_6_</DataField>
+        </Field>
+        <Field Name="PrnChkDescriptionLine_CheckStyle__CA_1_">
+          <DataField>PrnChkDescriptionLine_CheckStyle__CA_1_</DataField>
+        </Field>
+        <Field Name="PrnChkDescriptionLine_CheckStyle__CA_2_">
+          <DataField>PrnChkDescriptionLine_CheckStyle__CA_2_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckDateText_CheckStyle__CA_">
+          <DataField>PrnChkCheckDateText_CheckStyle__CA_</DataField>
+        </Field>
+        <Field Name="PrnChkDateIndicator_CheckStyle__CA_">
+          <DataField>PrnChkDateIndicator_CheckStyle__CA_</DataField>
+        </Field>
+        <Field Name="PrnChkCheckAmountText_CheckStyle__CA_">
+          <DataField>PrnChkCheckAmountText_CheckStyle__CA_</DataField>
+        </Field>
+        <Field Name="PrnChkVoidText_CheckStyle__CA_">
+          <DataField>PrnChkVoidText_CheckStyle__CA_</DataField>
+        </Field>
+        <Field Name="PrnChkCurrencyCode_CheckStyle__CA_">
+          <DataField>PrnChkCurrencyCode_CheckStyle__CA_</DataField>
+        </Field>
+        <Field Name="PrnChkCurrencyCode_CheckStyle__US_">
+          <DataField>PrnChkCurrencyCode_CheckStyle__US_</DataField>
+        </Field>
+        <Field Name="CheckNoText_Control1480000">
+          <DataField>CheckNoText_Control1480000</DataField>
+        </Field>
+        <Field Name="CheckDateText_Control1480021">
+          <DataField>CheckDateText_Control1480021</DataField>
+        </Field>
+        <Field Name="CheckToAddr_1__Control1480022">
+          <DataField>CheckToAddr_1__Control1480022</DataField>
+        </Field>
+        <Field Name="Stub2DocNoHeader">
+          <DataField>Stub2DocNoHeader</DataField>
+        </Field>
+        <Field Name="Stub2DocDateHeader">
+          <DataField>Stub2DocDateHeader</DataField>
+        </Field>
+        <Field Name="Stub2AmountHeader">
+          <DataField>Stub2AmountHeader</DataField>
+        </Field>
+        <Field Name="Stub2DiscountHeader">
+          <DataField>Stub2DiscountHeader</DataField>
+        </Field>
+        <Field Name="Stub2NetAmountHeader">
+          <DataField>Stub2NetAmountHeader</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_1_">
+          <DataField>Stub2LineAmount_1_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_1_Format">
+          <DataField>Stub2LineAmount_1_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_1_">
+          <DataField>Stub2LineDiscount_1_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_1_Format">
+          <DataField>Stub2LineDiscount_1_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_1____Stub2LineDiscount_1_">
+          <DataField>Stub2LineAmount_1____Stub2LineDiscount_1_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_1____Stub2LineDiscount_1_Format">
+          <DataField>Stub2LineAmount_1____Stub2LineDiscount_1_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_1_">
+          <DataField>Stub2DocDate_1_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_1_">
+          <DataField>Stub2DocNo_1_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_2_">
+          <DataField>Stub2LineAmount_2_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_2_Format">
+          <DataField>Stub2LineAmount_2_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_2_">
+          <DataField>Stub2LineDiscount_2_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_2_Format">
+          <DataField>Stub2LineDiscount_2_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_2____Stub2LineDiscount_2_">
+          <DataField>Stub2LineAmount_2____Stub2LineDiscount_2_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_2____Stub2LineDiscount_2_Format">
+          <DataField>Stub2LineAmount_2____Stub2LineDiscount_2_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_2_">
+          <DataField>Stub2DocDate_2_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_2_">
+          <DataField>Stub2DocNo_2_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_3_">
+          <DataField>Stub2LineAmount_3_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_3_Format">
+          <DataField>Stub2LineAmount_3_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_3_">
+          <DataField>Stub2LineDiscount_3_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_3_Format">
+          <DataField>Stub2LineDiscount_3_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_3____Stub2LineDiscount_3_">
+          <DataField>Stub2LineAmount_3____Stub2LineDiscount_3_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_3____Stub2LineDiscount_3_Format">
+          <DataField>Stub2LineAmount_3____Stub2LineDiscount_3_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_3_">
+          <DataField>Stub2DocDate_3_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_3_">
+          <DataField>Stub2DocNo_3_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_4_">
+          <DataField>Stub2LineAmount_4_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_4_Format">
+          <DataField>Stub2LineAmount_4_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_4_">
+          <DataField>Stub2LineDiscount_4_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_4_Format">
+          <DataField>Stub2LineDiscount_4_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_4____Stub2LineDiscount_4_">
+          <DataField>Stub2LineAmount_4____Stub2LineDiscount_4_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_4____Stub2LineDiscount_4_Format">
+          <DataField>Stub2LineAmount_4____Stub2LineDiscount_4_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_4_">
+          <DataField>Stub2DocDate_4_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_4_">
+          <DataField>Stub2DocNo_4_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_5_">
+          <DataField>Stub2LineAmount_5_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_5_Format">
+          <DataField>Stub2LineAmount_5_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_5_">
+          <DataField>Stub2LineDiscount_5_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_5_Format">
+          <DataField>Stub2LineDiscount_5_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_5____Stub2LineDiscount_5_">
+          <DataField>Stub2LineAmount_5____Stub2LineDiscount_5_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_5____Stub2LineDiscount_5_Format">
+          <DataField>Stub2LineAmount_5____Stub2LineDiscount_5_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_5_">
+          <DataField>Stub2DocDate_5_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_5_">
+          <DataField>Stub2DocNo_5_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_6_">
+          <DataField>Stub2LineAmount_6_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_6_Format">
+          <DataField>Stub2LineAmount_6_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_6_">
+          <DataField>Stub2LineDiscount_6_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_6_Format">
+          <DataField>Stub2LineDiscount_6_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_6____Stub2LineDiscount_6_">
+          <DataField>Stub2LineAmount_6____Stub2LineDiscount_6_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_6____Stub2LineDiscount_6_Format">
+          <DataField>Stub2LineAmount_6____Stub2LineDiscount_6_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_6_">
+          <DataField>Stub2DocDate_6_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_6_">
+          <DataField>Stub2DocNo_6_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_7_">
+          <DataField>Stub2LineAmount_7_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_7_Format">
+          <DataField>Stub2LineAmount_7_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_7_">
+          <DataField>Stub2LineDiscount_7_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_7_Format">
+          <DataField>Stub2LineDiscount_7_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_7____Stub2LineDiscount_7_">
+          <DataField>Stub2LineAmount_7____Stub2LineDiscount_7_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_7____Stub2LineDiscount_7_Format">
+          <DataField>Stub2LineAmount_7____Stub2LineDiscount_7_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_7_">
+          <DataField>Stub2DocDate_7_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_7_">
+          <DataField>Stub2DocNo_7_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_8_">
+          <DataField>Stub2LineAmount_8_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_8_Format">
+          <DataField>Stub2LineAmount_8_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_8_">
+          <DataField>Stub2LineDiscount_8_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_8_Format">
+          <DataField>Stub2LineDiscount_8_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_8____Stub2LineDiscount_8_">
+          <DataField>Stub2LineAmount_8____Stub2LineDiscount_8_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_8____Stub2LineDiscount_8_Format">
+          <DataField>Stub2LineAmount_8____Stub2LineDiscount_8_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_8_">
+          <DataField>Stub2DocDate_8_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_8_">
+          <DataField>Stub2DocNo_8_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_9_">
+          <DataField>Stub2LineAmount_9_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_9_Format">
+          <DataField>Stub2LineAmount_9_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_9_">
+          <DataField>Stub2LineDiscount_9_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_9_Format">
+          <DataField>Stub2LineDiscount_9_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_9____Stub2LineDiscount_9_">
+          <DataField>Stub2LineAmount_9____Stub2LineDiscount_9_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_9____Stub2LineDiscount_9_Format">
+          <DataField>Stub2LineAmount_9____Stub2LineDiscount_9_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_9_">
+          <DataField>Stub2DocDate_9_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_9_">
+          <DataField>Stub2DocNo_9_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_10_">
+          <DataField>Stub2LineAmount_10_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_10_Format">
+          <DataField>Stub2LineAmount_10_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_10_">
+          <DataField>Stub2LineDiscount_10_</DataField>
+        </Field>
+        <Field Name="Stub2LineDiscount_10_Format">
+          <DataField>Stub2LineDiscount_10_Format</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_10____Stub2LineDiscount_10_">
+          <DataField>Stub2LineAmount_10____Stub2LineDiscount_10_</DataField>
+        </Field>
+        <Field Name="Stub2LineAmount_10____Stub2LineDiscount_10_Format">
+          <DataField>Stub2LineAmount_10____Stub2LineDiscount_10_Format</DataField>
+        </Field>
+        <Field Name="Stub2DocDate_10_">
+          <DataField>Stub2DocDate_10_</DataField>
+        </Field>
+        <Field Name="Stub2DocNo_10_">
+          <DataField>Stub2DocNo_10_</DataField>
+        </Field>
+        <Field Name="TotalLineAmount_Control1480082">
+          <DataField>TotalLineAmount_Control1480082</DataField>
+        </Field>
+        <Field Name="TotalLineAmount_Control1480082Format">
+          <DataField>TotalLineAmount_Control1480082Format</DataField>
+        </Field>
+        <Field Name="TotalText_Control1480083">
+          <DataField>TotalText_Control1480083</DataField>
+        </Field>
+        <Field Name="Stub2PostingDescHeader">
+          <DataField>Stub2PostingDescHeader</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_1_">
+          <DataField>Stub2PostingDesc_1_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_2_">
+          <DataField>Stub2PostingDesc_2_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_4_">
+          <DataField>Stub2PostingDesc_4_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_3_">
+          <DataField>Stub2PostingDesc_3_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_8_">
+          <DataField>Stub2PostingDesc_8_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_7_">
+          <DataField>Stub2PostingDesc_7_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_6_">
+          <DataField>Stub2PostingDesc_6_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_5_">
+          <DataField>Stub2PostingDesc_5_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_10_">
+          <DataField>Stub2PostingDesc_10_</DataField>
+        </Field>
+        <Field Name="Stub2PostingDesc_9_">
+          <DataField>Stub2PostingDesc_9_</DataField>
+        </Field>
+        <Field Name="CheckToAddr_5_">
+          <DataField>CheckToAddr_5_</DataField>
+        </Field>
+        <Field Name="CheckToAddr_4_">
+          <DataField>CheckToAddr_4_</DataField>
+        </Field>
+        <Field Name="CheckToAddr_3_">
+          <DataField>CheckToAddr_3_</DataField>
+        </Field>
+        <Field Name="CheckToAddr_2_">
+          <DataField>CheckToAddr_2_</DataField>
+        </Field>
+        <Field Name="CheckToAddr_01_">
+          <DataField>CheckToAddr_01_</DataField>
+        </Field>
+        <Field Name="VoidText">
+          <DataField>VoidText</DataField>
+        </Field>
+        <Field Name="BankCurrencyCode">
+          <DataField>BankCurrencyCode</DataField>
+        </Field>
+        <Field Name="DollarSignBefore_CheckAmountText_DollarSignAfter">
+          <DataField>DollarSignBefore_CheckAmountText_DollarSignAfter</DataField>
+        </Field>
+        <Field Name="DescriptionLine_1__">
+          <DataField>DescriptionLine_1__</DataField>
+        </Field>
+        <Field Name="DescriptionLine_2__">
+          <DataField>DescriptionLine_2__</DataField>
+        </Field>
+        <Field Name="DateIndicator">
+          <DataField>DateIndicator</DataField>
+        </Field>
+        <Field Name="CheckDateText_Control1020013">
+          <DataField>CheckDateText_Control1020013</DataField>
+        </Field>
+        <Field Name="CheckNoText_Control1020014">
+          <DataField>CheckNoText_Control1020014</DataField>
+        </Field>
+        <Field Name="CompanyAddr_6_">
+          <DataField>CompanyAddr_6_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_5_">
+          <DataField>CompanyAddr_5_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_4_">
+          <DataField>CompanyAddr_4_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_3_">
+          <DataField>CompanyAddr_3_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_2_">
+          <DataField>CompanyAddr_2_</DataField>
+        </Field>
+        <Field Name="CompanyAddr_1_">
+          <DataField>CompanyAddr_1_</DataField>
+        </Field>
+        <Field Name="CheckStyleIndex">
+          <DataField>CheckStyleIndex</DataField>
+        </Field>
+        <Field Name="CompanyAddr_7_">
+          <DataField>CompanyAddr_7_</DataField>
+        </Field>
+        <Field Name="PrintCheck_Number">
+          <DataField>PrintCheck_Number</DataField>
+        </Field>
+        <Field Name="CheckNoText_Control1480000Caption">
+          <DataField>CheckNoText_Control1480000Caption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

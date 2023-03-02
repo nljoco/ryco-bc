@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -11,138 +11,6 @@
       <rd:DataSourceID>ace23880-ab05-4ebb-af60-13aee80ed1a7</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="No_AssemblyHeader">
-          <DataField>No_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="ItemNo_AssemblyHeader">
-          <DataField>ItemNo_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="Description_AssemblyHeader">
-          <DataField>Description_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="Quantity_AssemblyHeader">
-          <DataField>Quantity_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="Quantity_AssemblyHeaderFormat">
-          <DataField>Quantity_AssemblyHeaderFormat</DataField>
-        </Field>
-        <Field Name="QuantityToAssemble_AssemblyHeader">
-          <DataField>QuantityToAssemble_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="QuantityToAssemble_AssemblyHeaderFormat">
-          <DataField>QuantityToAssemble_AssemblyHeaderFormat</DataField>
-        </Field>
-        <Field Name="UnitOfMeasureCode_AssemblyHeader">
-          <DataField>UnitOfMeasureCode_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="DueDate_AssemblyHeader">
-          <DataField>DueDate_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="StartingDate_AssemblyHeader">
-          <DataField>StartingDate_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="EndingDate_AssemblyHeader">
-          <DataField>EndingDate_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="LocationCode_AssemblyHeader">
-          <DataField>LocationCode_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="BinCode_AssemblyHeader">
-          <DataField>BinCode_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="SalesDocNo">
-          <DataField>SalesDocNo</DataField>
-        </Field>
-        <Field Name="COMPANYNAME">
-          <DataField>COMPANYNAME</DataField>
-        </Field>
-        <Field Name="SalesOrderNo_AssemblyHeader">
-          <DataField>SalesOrderNo_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="Code_IUoM">
-          <DataField>Code_IUoM</DataField>
-        </Field>
-        <Field Name="Qty_IUoM">
-          <DataField>Qty_IUoM</DataField>
-        </Field>
-        <Field Name="Qty_IUoMFormat">
-          <DataField>Qty_IUoMFormat</DataField>
-        </Field>
-        <Field Name="LastAssemOrder_Item">
-          <DataField>LastAssemOrder_Item</DataField>
-        </Field>
-        <Field Name="PrevAssemOrder_Item">
-          <DataField>PrevAssemOrder_Item</DataField>
-        </Field>
-        <Field Name="TotalInkKgLines_AssemblyHeader">
-          <DataField>TotalInkKgLines_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="TotalInkKgLines_AssemblyHeaderFormat">
-          <DataField>TotalInkKgLines_AssemblyHeaderFormat</DataField>
-        </Field>
-        <Field Name="ProductRemark_AssemblyHeader">
-          <DataField>ProductRemark_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="CustomerName_AssemblyHeader">
-          <DataField>CustomerName_AssemblyHeader</DataField>
-        </Field>
-        <Field Name="Type_AssemblyLine">
-          <DataField>Type_AssemblyLine</DataField>
-        </Field>
-        <Field Name="No_AssemblyLine">
-          <DataField>No_AssemblyLine</DataField>
-        </Field>
-        <Field Name="Description_AssemblyLine">
-          <DataField>Description_AssemblyLine</DataField>
-        </Field>
-        <Field Name="VariantCode_AssemblyLine">
-          <DataField>VariantCode_AssemblyLine</DataField>
-        </Field>
-        <Field Name="DueDate_AssemblyLine">
-          <DataField>DueDate_AssemblyLine</DataField>
-        </Field>
-        <Field Name="QuantityPer_AssemblyLine">
-          <DataField>QuantityPer_AssemblyLine</DataField>
-        </Field>
-        <Field Name="QuantityPer_AssemblyLineFormat">
-          <DataField>QuantityPer_AssemblyLineFormat</DataField>
-        </Field>
-        <Field Name="Quantity_AssemblyLine">
-          <DataField>Quantity_AssemblyLine</DataField>
-        </Field>
-        <Field Name="Quantity_AssemblyLineFormat">
-          <DataField>Quantity_AssemblyLineFormat</DataField>
-        </Field>
-        <Field Name="UnitOfMeasureCode_AssemblyLine">
-          <DataField>UnitOfMeasureCode_AssemblyLine</DataField>
-        </Field>
-        <Field Name="LocationCode_AssemblyLine">
-          <DataField>LocationCode_AssemblyLine</DataField>
-        </Field>
-        <Field Name="BinCode_AssemblyLine">
-          <DataField>BinCode_AssemblyLine</DataField>
-        </Field>
-        <Field Name="QuantityToConsume_AssemblyLine">
-          <DataField>QuantityToConsume_AssemblyLine</DataField>
-        </Field>
-        <Field Name="QuantityToConsume_AssemblyLineFormat">
-          <DataField>QuantityToConsume_AssemblyLineFormat</DataField>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSet</rd:DataSetName>
-        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
-        <rd:TableName>Result</rd:TableName>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -2849,132 +2717,6 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="ItemNo_AssemblyHeaderCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>ItemNo_AssemblyHeaderCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>ItemNo_AssemblyHeaderCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Description_AssemblyHeaderCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>Description_AssemblyHeaderCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Description_AssemblyHeaderCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Quantity_AssemblyHeaderCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>Quantity_AssemblyHeaderCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Quantity_AssemblyHeaderCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="QuantityToAssemble_AssemblyHeaderCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>QuantityToAssemble_AssemblyHeaderCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>QuantityToAssemble_AssemblyHeaderCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="LocationCode_AssemblyHeaderCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>LocationCode_AssemblyHeaderCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>LocationCode_AssemblyHeaderCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Type_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>Type_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Type_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="No_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>No_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>No_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Description_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>Description_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Description_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="VariantCode_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>VariantCode_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>VariantCode_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="QuantityPer_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>QuantityPer_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>QuantityPer_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="Quantity_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>Quantity_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Quantity_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="LocationCode_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>LocationCode_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>LocationCode_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="BinCode_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>BinCode_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>BinCode_AssemblyLineCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="QuantityToConsume_AssemblyLineCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>QuantityToConsume_AssemblyLineCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>QuantityToConsume_AssemblyLineCaption</Prompt>
-    </ReportParameter>
     <ReportParameter Name="AssemblyOrderHeading">
       <DataType>String</DataType>
       <DefaultValue>
@@ -3218,6 +2960,132 @@
       </DefaultValue>
       <Prompt>CustomerNameLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="ItemNo_AssemblyHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemNo_AssemblyHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemNo_AssemblyHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description_AssemblyHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description_AssemblyHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description_AssemblyHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Quantity_AssemblyHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Quantity_AssemblyHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Quantity_AssemblyHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityToAssemble_AssemblyHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityToAssemble_AssemblyHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityToAssemble_AssemblyHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LocationCode_AssemblyHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LocationCode_AssemblyHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LocationCode_AssemblyHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Type_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Type_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Type_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VariantCode_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VariantCode_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VariantCode_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityPer_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityPer_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityPer_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Quantity_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Quantity_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Quantity_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LocationCode_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LocationCode_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LocationCode_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BinCode_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BinCode_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BinCode_AssemblyLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityToConsume_AssemblyLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityToConsume_AssemblyLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityToConsume_AssemblyLineCaption</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
@@ -3257,4 +3125,131 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_AssemblyHeader">
+          <DataField>No_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="ItemNo_AssemblyHeader">
+          <DataField>ItemNo_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="Description_AssemblyHeader">
+          <DataField>Description_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="Quantity_AssemblyHeader">
+          <DataField>Quantity_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="Quantity_AssemblyHeaderFormat">
+          <DataField>Quantity_AssemblyHeaderFormat</DataField>
+        </Field>
+        <Field Name="QuantityToAssemble_AssemblyHeader">
+          <DataField>QuantityToAssemble_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="QuantityToAssemble_AssemblyHeaderFormat">
+          <DataField>QuantityToAssemble_AssemblyHeaderFormat</DataField>
+        </Field>
+        <Field Name="UnitOfMeasureCode_AssemblyHeader">
+          <DataField>UnitOfMeasureCode_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="DueDate_AssemblyHeader">
+          <DataField>DueDate_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="StartingDate_AssemblyHeader">
+          <DataField>StartingDate_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="EndingDate_AssemblyHeader">
+          <DataField>EndingDate_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="LocationCode_AssemblyHeader">
+          <DataField>LocationCode_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="BinCode_AssemblyHeader">
+          <DataField>BinCode_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="SalesDocNo">
+          <DataField>SalesDocNo</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="SalesOrderNo_AssemblyHeader">
+          <DataField>SalesOrderNo_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="Code_IUoM">
+          <DataField>Code_IUoM</DataField>
+        </Field>
+        <Field Name="Qty_IUoM">
+          <DataField>Qty_IUoM</DataField>
+        </Field>
+        <Field Name="Qty_IUoMFormat">
+          <DataField>Qty_IUoMFormat</DataField>
+        </Field>
+        <Field Name="LastAssemOrder_Item">
+          <DataField>LastAssemOrder_Item</DataField>
+        </Field>
+        <Field Name="PrevAssemOrder_Item">
+          <DataField>PrevAssemOrder_Item</DataField>
+        </Field>
+        <Field Name="TotalInkKgLines_AssemblyHeader">
+          <DataField>TotalInkKgLines_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="TotalInkKgLines_AssemblyHeaderFormat">
+          <DataField>TotalInkKgLines_AssemblyHeaderFormat</DataField>
+        </Field>
+        <Field Name="ProductRemark_AssemblyHeader">
+          <DataField>ProductRemark_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="CustomerName_AssemblyHeader">
+          <DataField>CustomerName_AssemblyHeader</DataField>
+        </Field>
+        <Field Name="Type_AssemblyLine">
+          <DataField>Type_AssemblyLine</DataField>
+        </Field>
+        <Field Name="No_AssemblyLine">
+          <DataField>No_AssemblyLine</DataField>
+        </Field>
+        <Field Name="Description_AssemblyLine">
+          <DataField>Description_AssemblyLine</DataField>
+        </Field>
+        <Field Name="VariantCode_AssemblyLine">
+          <DataField>VariantCode_AssemblyLine</DataField>
+        </Field>
+        <Field Name="DueDate_AssemblyLine">
+          <DataField>DueDate_AssemblyLine</DataField>
+        </Field>
+        <Field Name="QuantityPer_AssemblyLine">
+          <DataField>QuantityPer_AssemblyLine</DataField>
+        </Field>
+        <Field Name="QuantityPer_AssemblyLineFormat">
+          <DataField>QuantityPer_AssemblyLineFormat</DataField>
+        </Field>
+        <Field Name="Quantity_AssemblyLine">
+          <DataField>Quantity_AssemblyLine</DataField>
+        </Field>
+        <Field Name="Quantity_AssemblyLineFormat">
+          <DataField>Quantity_AssemblyLineFormat</DataField>
+        </Field>
+        <Field Name="UnitOfMeasureCode_AssemblyLine">
+          <DataField>UnitOfMeasureCode_AssemblyLine</DataField>
+        </Field>
+        <Field Name="LocationCode_AssemblyLine">
+          <DataField>LocationCode_AssemblyLine</DataField>
+        </Field>
+        <Field Name="BinCode_AssemblyLine">
+          <DataField>BinCode_AssemblyLine</DataField>
+        </Field>
+        <Field Name="QuantityToConsume_AssemblyLine">
+          <DataField>QuantityToConsume_AssemblyLine</DataField>
+        </Field>
+        <Field Name="QuantityToConsume_AssemblyLineFormat">
+          <DataField>QuantityToConsume_AssemblyLineFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

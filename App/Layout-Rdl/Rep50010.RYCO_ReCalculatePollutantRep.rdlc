@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportNameLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReportNameLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportNameLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PageNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PageNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PageNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UOMLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>UOMLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>UOMLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LvlLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LvlLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LvlLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CompNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CompNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompQtyLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CompQtyLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CompQtyLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ComUOMLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ComUOMLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ComUOMLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompPolPerLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CompPolPerLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CompPolPerLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompExtPolPerLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CompExtPolPerLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CompExtPolPerLbl</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ParentItem_No">
+          <DataField>ParentItem_No</DataField>
+        </Field>
+        <Field Name="ParentItem_Description">
+          <DataField>ParentItem_Description</DataField>
+        </Field>
+        <Field Name="ParentItem_UoM">
+          <DataField>ParentItem_UoM</DataField>
+        </Field>
+        <Field Name="Lvl">
+          <DataField>Lvl</DataField>
+        </Field>
+        <Field Name="Component_No">
+          <DataField>Component_No</DataField>
+        </Field>
+        <Field Name="Component_Description">
+          <DataField>Component_Description</DataField>
+        </Field>
+        <Field Name="Component_Qty">
+          <DataField>Component_Qty</DataField>
+        </Field>
+        <Field Name="Component_QtyFormat">
+          <DataField>Component_QtyFormat</DataField>
+        </Field>
+        <Field Name="Component_UOM">
+          <DataField>Component_UOM</DataField>
+        </Field>
+        <Field Name="Component_PolPerc">
+          <DataField>Component_PolPerc</DataField>
+        </Field>
+        <Field Name="Component_PolPercFormat">
+          <DataField>Component_PolPercFormat</DataField>
+        </Field>
+        <Field Name="Component_ExtPolPerc">
+          <DataField>Component_ExtPolPerc</DataField>
+        </Field>
+        <Field Name="Component_ExtPolPercFormat">
+          <DataField>Component_ExtPolPercFormat</DataField>
+        </Field>
+        <Field Name="PolDescHdr1">
+          <DataField>PolDescHdr1</DataField>
+        </Field>
+        <Field Name="PolDescHdr2">
+          <DataField>PolDescHdr2</DataField>
+        </Field>
+        <Field Name="PolDescHdr3">
+          <DataField>PolDescHdr3</DataField>
+        </Field>
+        <Field Name="PolDescHdr4">
+          <DataField>PolDescHdr4</DataField>
+        </Field>
+        <Field Name="PolDescHdr5">
+          <DataField>PolDescHdr5</DataField>
+        </Field>
+        <Field Name="PolDescHdr6">
+          <DataField>PolDescHdr6</DataField>
+        </Field>
+        <Field Name="PolDescHdr7">
+          <DataField>PolDescHdr7</DataField>
+        </Field>
+        <Field Name="PolDescHdr8">
+          <DataField>PolDescHdr8</DataField>
+        </Field>
+        <Field Name="PolDescHdr9">
+          <DataField>PolDescHdr9</DataField>
+        </Field>
+        <Field Name="PolDescHdr10">
+          <DataField>PolDescHdr10</DataField>
+        </Field>
+        <Field Name="PolDescFtr1">
+          <DataField>PolDescFtr1</DataField>
+        </Field>
+        <Field Name="PolDescFtr2">
+          <DataField>PolDescFtr2</DataField>
+        </Field>
+        <Field Name="PolDescFtr3">
+          <DataField>PolDescFtr3</DataField>
+        </Field>
+        <Field Name="PolDescFtr4">
+          <DataField>PolDescFtr4</DataField>
+        </Field>
+        <Field Name="PolDescFtr5">
+          <DataField>PolDescFtr5</DataField>
+        </Field>
+        <Field Name="PolDescFtr6">
+          <DataField>PolDescFtr6</DataField>
+        </Field>
+        <Field Name="PolDescFtr7">
+          <DataField>PolDescFtr7</DataField>
+        </Field>
+        <Field Name="PolDescFtr8">
+          <DataField>PolDescFtr8</DataField>
+        </Field>
+        <Field Name="PolDescFtr9">
+          <DataField>PolDescFtr9</DataField>
+        </Field>
+        <Field Name="PolDescFtr10">
+          <DataField>PolDescFtr10</DataField>
+        </Field>
+        <Field Name="PolPercHdr1">
+          <DataField>PolPercHdr1</DataField>
+        </Field>
+        <Field Name="PolPercHdr1Format">
+          <DataField>PolPercHdr1Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr2">
+          <DataField>PolPercHdr2</DataField>
+        </Field>
+        <Field Name="PolPercHdr2Format">
+          <DataField>PolPercHdr2Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr3">
+          <DataField>PolPercHdr3</DataField>
+        </Field>
+        <Field Name="PolPercHdr3Format">
+          <DataField>PolPercHdr3Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr4">
+          <DataField>PolPercHdr4</DataField>
+        </Field>
+        <Field Name="PolPercHdr4Format">
+          <DataField>PolPercHdr4Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr5">
+          <DataField>PolPercHdr5</DataField>
+        </Field>
+        <Field Name="PolPercHdr5Format">
+          <DataField>PolPercHdr5Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr6">
+          <DataField>PolPercHdr6</DataField>
+        </Field>
+        <Field Name="PolPercHdr6Format">
+          <DataField>PolPercHdr6Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr7">
+          <DataField>PolPercHdr7</DataField>
+        </Field>
+        <Field Name="PolPercHdr7Format">
+          <DataField>PolPercHdr7Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr8">
+          <DataField>PolPercHdr8</DataField>
+        </Field>
+        <Field Name="PolPercHdr8Format">
+          <DataField>PolPercHdr8Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr9">
+          <DataField>PolPercHdr9</DataField>
+        </Field>
+        <Field Name="PolPercHdr9Format">
+          <DataField>PolPercHdr9Format</DataField>
+        </Field>
+        <Field Name="PolPercHdr10">
+          <DataField>PolPercHdr10</DataField>
+        </Field>
+        <Field Name="PolPercHdr10Format">
+          <DataField>PolPercHdr10Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr1">
+          <DataField>PolPercFtr1</DataField>
+        </Field>
+        <Field Name="PolPercFtr1Format">
+          <DataField>PolPercFtr1Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr2">
+          <DataField>PolPercFtr2</DataField>
+        </Field>
+        <Field Name="PolPercFtr2Format">
+          <DataField>PolPercFtr2Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr3">
+          <DataField>PolPercFtr3</DataField>
+        </Field>
+        <Field Name="PolPercFtr3Format">
+          <DataField>PolPercFtr3Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr4">
+          <DataField>PolPercFtr4</DataField>
+        </Field>
+        <Field Name="PolPercFtr4Format">
+          <DataField>PolPercFtr4Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr5">
+          <DataField>PolPercFtr5</DataField>
+        </Field>
+        <Field Name="PolPercFtr5Format">
+          <DataField>PolPercFtr5Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr6">
+          <DataField>PolPercFtr6</DataField>
+        </Field>
+        <Field Name="PolPercFtr6Format">
+          <DataField>PolPercFtr6Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr7">
+          <DataField>PolPercFtr7</DataField>
+        </Field>
+        <Field Name="PolPercFtr7Format">
+          <DataField>PolPercFtr7Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr8">
+          <DataField>PolPercFtr8</DataField>
+        </Field>
+        <Field Name="PolPercFtr8Format">
+          <DataField>PolPercFtr8Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr9">
+          <DataField>PolPercFtr9</DataField>
+        </Field>
+        <Field Name="PolPercFtr9Format">
+          <DataField>PolPercFtr9Format</DataField>
+        </Field>
+        <Field Name="PolPercFtr10">
+          <DataField>PolPercFtr10</DataField>
+        </Field>
+        <Field Name="PolPercFtr10Format">
+          <DataField>PolPercFtr10Format</DataField>
+        </Field>
+        <Field Name="ItemFilter">
+          <DataField>ItemFilter</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

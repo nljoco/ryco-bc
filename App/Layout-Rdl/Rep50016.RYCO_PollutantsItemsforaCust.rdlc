@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -11,267 +11,6 @@
       <rd:DataSourceID>8e1f5f74-24e6-4d49-8026-12c81c4ab5ac</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Name_Company">
-          <DataField>Name_Company</DataField>
-        </Field>
-        <Field Name="No_Customer">
-          <DataField>No_Customer</DataField>
-        </Field>
-        <Field Name="Name_Customer">
-          <DataField>Name_Customer</DataField>
-        </Field>
-        <Field Name="No_TempItem">
-          <DataField>No_TempItem</DataField>
-        </Field>
-        <Field Name="Description_TempItem">
-          <DataField>Description_TempItem</DataField>
-        </Field>
-        <Field Name="Qty_TempItem">
-          <DataField>Qty_TempItem</DataField>
-        </Field>
-        <Field Name="Qty_TempItemFormat">
-          <DataField>Qty_TempItemFormat</DataField>
-        </Field>
-        <Field Name="QtyPerUOM_ItemUOM">
-          <DataField>QtyPerUOM_ItemUOM</DataField>
-        </Field>
-        <Field Name="QtyPerUOM_ItemUOMFormat">
-          <DataField>QtyPerUOM_ItemUOMFormat</DataField>
-        </Field>
-        <Field Name="BaseUOM_TempItem">
-          <DataField>BaseUOM_TempItem</DataField>
-        </Field>
-        <Field Name="Description_UOM">
-          <DataField>Description_UOM</DataField>
-        </Field>
-        <Field Name="VOC_TempItem">
-          <DataField>VOC_TempItem</DataField>
-        </Field>
-        <Field Name="VOC_TempItemFormat">
-          <DataField>VOC_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Cobalt_TempItem">
-          <DataField>Cobalt_TempItem</DataField>
-        </Field>
-        <Field Name="Cobalt_TempItemFormat">
-          <DataField>Cobalt_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Manganese_TempItem">
-          <DataField>Manganese_TempItem</DataField>
-        </Field>
-        <Field Name="Manganese_TempItemFormat">
-          <DataField>Manganese_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Copper_TempItem">
-          <DataField>Copper_TempItem</DataField>
-        </Field>
-        <Field Name="Copper_TempItemFormat">
-          <DataField>Copper_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Molybdenum_TempItem">
-          <DataField>Molybdenum_TempItem</DataField>
-        </Field>
-        <Field Name="Molybdenum_TempItemFormat">
-          <DataField>Molybdenum_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Zinc_TempItem">
-          <DataField>Zinc_TempItem</DataField>
-        </Field>
-        <Field Name="Zinc_TempItemFormat">
-          <DataField>Zinc_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Methylene_TempItem">
-          <DataField>Methylene_TempItem</DataField>
-        </Field>
-        <Field Name="Methylene_TempItemFormat">
-          <DataField>Methylene_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Toluene_TempItem">
-          <DataField>Toluene_TempItem</DataField>
-        </Field>
-        <Field Name="Toluene_TempItemFormat">
-          <DataField>Toluene_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Xylene_TempItem">
-          <DataField>Xylene_TempItem</DataField>
-        </Field>
-        <Field Name="Xylene_TempItemFormat">
-          <DataField>Xylene_TempItemFormat</DataField>
-        </Field>
-        <Field Name="CAS5160021_TempItem">
-          <DataField>CAS5160021_TempItem</DataField>
-        </Field>
-        <Field Name="CAS5160021_TempItemFormat">
-          <DataField>CAS5160021_TempItemFormat</DataField>
-        </Field>
-        <Field Name="Other_TempItem">
-          <DataField>Other_TempItem</DataField>
-        </Field>
-        <Field Name="Other_TempItemFormat">
-          <DataField>Other_TempItemFormat</DataField>
-        </Field>
-        <Field Name="VOC">
-          <DataField>VOC</DataField>
-        </Field>
-        <Field Name="VOCFormat">
-          <DataField>VOCFormat</DataField>
-        </Field>
-        <Field Name="Cobalt">
-          <DataField>Cobalt</DataField>
-        </Field>
-        <Field Name="CobaltFormat">
-          <DataField>CobaltFormat</DataField>
-        </Field>
-        <Field Name="Manganese">
-          <DataField>Manganese</DataField>
-        </Field>
-        <Field Name="ManganeseFormat">
-          <DataField>ManganeseFormat</DataField>
-        </Field>
-        <Field Name="Copper">
-          <DataField>Copper</DataField>
-        </Field>
-        <Field Name="CopperFormat">
-          <DataField>CopperFormat</DataField>
-        </Field>
-        <Field Name="Molybdenum">
-          <DataField>Molybdenum</DataField>
-        </Field>
-        <Field Name="MolybdenumFormat">
-          <DataField>MolybdenumFormat</DataField>
-        </Field>
-        <Field Name="Zinc">
-          <DataField>Zinc</DataField>
-        </Field>
-        <Field Name="ZincFormat">
-          <DataField>ZincFormat</DataField>
-        </Field>
-        <Field Name="Methylene">
-          <DataField>Methylene</DataField>
-        </Field>
-        <Field Name="MethyleneFormat">
-          <DataField>MethyleneFormat</DataField>
-        </Field>
-        <Field Name="Toluene">
-          <DataField>Toluene</DataField>
-        </Field>
-        <Field Name="TolueneFormat">
-          <DataField>TolueneFormat</DataField>
-        </Field>
-        <Field Name="Xylene">
-          <DataField>Xylene</DataField>
-        </Field>
-        <Field Name="XyleneFormat">
-          <DataField>XyleneFormat</DataField>
-        </Field>
-        <Field Name="CAS5160021">
-          <DataField>CAS5160021</DataField>
-        </Field>
-        <Field Name="CAS5160021Format">
-          <DataField>CAS5160021Format</DataField>
-        </Field>
-        <Field Name="Other">
-          <DataField>Other</DataField>
-        </Field>
-        <Field Name="OtherFormat">
-          <DataField>OtherFormat</DataField>
-        </Field>
-        <Field Name="RepFilters">
-          <DataField>RepFilters</DataField>
-        </Field>
-        <Field Name="RepTitleCaption">
-          <DataField>RepTitleCaption</DataField>
-        </Field>
-        <Field Name="DateCaption">
-          <DataField>DateCaption</DataField>
-        </Field>
-        <Field Name="PageCaption">
-          <DataField>PageCaption</DataField>
-        </Field>
-        <Field Name="RepFiltersCaption">
-          <DataField>RepFiltersCaption</DataField>
-        </Field>
-        <Field Name="ItemNoCaption">
-          <DataField>ItemNoCaption</DataField>
-        </Field>
-        <Field Name="UnitCaption">
-          <DataField>UnitCaption</DataField>
-        </Field>
-        <Field Name="DescriptionCaption">
-          <DataField>DescriptionCaption</DataField>
-        </Field>
-        <Field Name="ContainersCaption">
-          <DataField>ContainersCaption</DataField>
-        </Field>
-        <Field Name="SoldCaption">
-          <DataField>SoldCaption</DataField>
-        </Field>
-        <Field Name="BuildCaption">
-          <DataField>BuildCaption</DataField>
-        </Field>
-        <Field Name="ConvCaption">
-          <DataField>ConvCaption</DataField>
-        </Field>
-        <Field Name="POLPctCaption">
-          <DataField>POLPctCaption</DataField>
-        </Field>
-        <Field Name="KgofPOLCaption">
-          <DataField>KgofPOLCaption</DataField>
-        </Field>
-        <Field Name="CustomerCaption">
-          <DataField>CustomerCaption</DataField>
-        </Field>
-        <Field Name="VOCCaption">
-          <DataField>VOCCaption</DataField>
-        </Field>
-        <Field Name="CobaltCaption">
-          <DataField>CobaltCaption</DataField>
-        </Field>
-        <Field Name="ManganCaption">
-          <DataField>ManganCaption</DataField>
-        </Field>
-        <Field Name="CopperCaption">
-          <DataField>CopperCaption</DataField>
-        </Field>
-        <Field Name="MolybdCaption">
-          <DataField>MolybdCaption</DataField>
-        </Field>
-        <Field Name="ZincCaption">
-          <DataField>ZincCaption</DataField>
-        </Field>
-        <Field Name="MetylCaption">
-          <DataField>MetylCaption</DataField>
-        </Field>
-        <Field Name="ToluenCaption">
-          <DataField>ToluenCaption</DataField>
-        </Field>
-        <Field Name="XyleneCaption">
-          <DataField>XyleneCaption</DataField>
-        </Field>
-        <Field Name="CAS5160021Caption">
-          <DataField>CAS5160021Caption</DataField>
-        </Field>
-        <Field Name="OtherCaption">
-          <DataField>OtherCaption</DataField>
-        </Field>
-        <Field Name="CustTotalsCaption">
-          <DataField>CustTotalsCaption</DataField>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSet</rd:DataSetName>
-        <rd:SchemaPath>Report.xsd</rd:SchemaPath>
-        <rd:TableName>Result</rd:TableName>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -9047,12 +8786,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -9092,4 +8825,260 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>fc203612-e517-4880-b559-f15fdfccc2ae</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Name_Company">
+          <DataField>Name_Company</DataField>
+        </Field>
+        <Field Name="No_Customer">
+          <DataField>No_Customer</DataField>
+        </Field>
+        <Field Name="Name_Customer">
+          <DataField>Name_Customer</DataField>
+        </Field>
+        <Field Name="No_TempItem">
+          <DataField>No_TempItem</DataField>
+        </Field>
+        <Field Name="Description_TempItem">
+          <DataField>Description_TempItem</DataField>
+        </Field>
+        <Field Name="Qty_TempItem">
+          <DataField>Qty_TempItem</DataField>
+        </Field>
+        <Field Name="Qty_TempItemFormat">
+          <DataField>Qty_TempItemFormat</DataField>
+        </Field>
+        <Field Name="QtyPerUOM_ItemUOM">
+          <DataField>QtyPerUOM_ItemUOM</DataField>
+        </Field>
+        <Field Name="QtyPerUOM_ItemUOMFormat">
+          <DataField>QtyPerUOM_ItemUOMFormat</DataField>
+        </Field>
+        <Field Name="BaseUOM_TempItem">
+          <DataField>BaseUOM_TempItem</DataField>
+        </Field>
+        <Field Name="Description_UOM">
+          <DataField>Description_UOM</DataField>
+        </Field>
+        <Field Name="VOC_TempItem">
+          <DataField>VOC_TempItem</DataField>
+        </Field>
+        <Field Name="VOC_TempItemFormat">
+          <DataField>VOC_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Cobalt_TempItem">
+          <DataField>Cobalt_TempItem</DataField>
+        </Field>
+        <Field Name="Cobalt_TempItemFormat">
+          <DataField>Cobalt_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Manganese_TempItem">
+          <DataField>Manganese_TempItem</DataField>
+        </Field>
+        <Field Name="Manganese_TempItemFormat">
+          <DataField>Manganese_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Copper_TempItem">
+          <DataField>Copper_TempItem</DataField>
+        </Field>
+        <Field Name="Copper_TempItemFormat">
+          <DataField>Copper_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Molybdenum_TempItem">
+          <DataField>Molybdenum_TempItem</DataField>
+        </Field>
+        <Field Name="Molybdenum_TempItemFormat">
+          <DataField>Molybdenum_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Zinc_TempItem">
+          <DataField>Zinc_TempItem</DataField>
+        </Field>
+        <Field Name="Zinc_TempItemFormat">
+          <DataField>Zinc_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Methylene_TempItem">
+          <DataField>Methylene_TempItem</DataField>
+        </Field>
+        <Field Name="Methylene_TempItemFormat">
+          <DataField>Methylene_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Toluene_TempItem">
+          <DataField>Toluene_TempItem</DataField>
+        </Field>
+        <Field Name="Toluene_TempItemFormat">
+          <DataField>Toluene_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Xylene_TempItem">
+          <DataField>Xylene_TempItem</DataField>
+        </Field>
+        <Field Name="Xylene_TempItemFormat">
+          <DataField>Xylene_TempItemFormat</DataField>
+        </Field>
+        <Field Name="CAS5160021_TempItem">
+          <DataField>CAS5160021_TempItem</DataField>
+        </Field>
+        <Field Name="CAS5160021_TempItemFormat">
+          <DataField>CAS5160021_TempItemFormat</DataField>
+        </Field>
+        <Field Name="Other_TempItem">
+          <DataField>Other_TempItem</DataField>
+        </Field>
+        <Field Name="Other_TempItemFormat">
+          <DataField>Other_TempItemFormat</DataField>
+        </Field>
+        <Field Name="VOC">
+          <DataField>VOC</DataField>
+        </Field>
+        <Field Name="VOCFormat">
+          <DataField>VOCFormat</DataField>
+        </Field>
+        <Field Name="Cobalt">
+          <DataField>Cobalt</DataField>
+        </Field>
+        <Field Name="CobaltFormat">
+          <DataField>CobaltFormat</DataField>
+        </Field>
+        <Field Name="Manganese">
+          <DataField>Manganese</DataField>
+        </Field>
+        <Field Name="ManganeseFormat">
+          <DataField>ManganeseFormat</DataField>
+        </Field>
+        <Field Name="Copper">
+          <DataField>Copper</DataField>
+        </Field>
+        <Field Name="CopperFormat">
+          <DataField>CopperFormat</DataField>
+        </Field>
+        <Field Name="Molybdenum">
+          <DataField>Molybdenum</DataField>
+        </Field>
+        <Field Name="MolybdenumFormat">
+          <DataField>MolybdenumFormat</DataField>
+        </Field>
+        <Field Name="Zinc">
+          <DataField>Zinc</DataField>
+        </Field>
+        <Field Name="ZincFormat">
+          <DataField>ZincFormat</DataField>
+        </Field>
+        <Field Name="Methylene">
+          <DataField>Methylene</DataField>
+        </Field>
+        <Field Name="MethyleneFormat">
+          <DataField>MethyleneFormat</DataField>
+        </Field>
+        <Field Name="Toluene">
+          <DataField>Toluene</DataField>
+        </Field>
+        <Field Name="TolueneFormat">
+          <DataField>TolueneFormat</DataField>
+        </Field>
+        <Field Name="Xylene">
+          <DataField>Xylene</DataField>
+        </Field>
+        <Field Name="XyleneFormat">
+          <DataField>XyleneFormat</DataField>
+        </Field>
+        <Field Name="CAS5160021">
+          <DataField>CAS5160021</DataField>
+        </Field>
+        <Field Name="CAS5160021Format">
+          <DataField>CAS5160021Format</DataField>
+        </Field>
+        <Field Name="Other">
+          <DataField>Other</DataField>
+        </Field>
+        <Field Name="OtherFormat">
+          <DataField>OtherFormat</DataField>
+        </Field>
+        <Field Name="RepFilters">
+          <DataField>RepFilters</DataField>
+        </Field>
+        <Field Name="RepTitleCaption">
+          <DataField>RepTitleCaption</DataField>
+        </Field>
+        <Field Name="DateCaption">
+          <DataField>DateCaption</DataField>
+        </Field>
+        <Field Name="PageCaption">
+          <DataField>PageCaption</DataField>
+        </Field>
+        <Field Name="RepFiltersCaption">
+          <DataField>RepFiltersCaption</DataField>
+        </Field>
+        <Field Name="ItemNoCaption">
+          <DataField>ItemNoCaption</DataField>
+        </Field>
+        <Field Name="UnitCaption">
+          <DataField>UnitCaption</DataField>
+        </Field>
+        <Field Name="DescriptionCaption">
+          <DataField>DescriptionCaption</DataField>
+        </Field>
+        <Field Name="ContainersCaption">
+          <DataField>ContainersCaption</DataField>
+        </Field>
+        <Field Name="SoldCaption">
+          <DataField>SoldCaption</DataField>
+        </Field>
+        <Field Name="BuildCaption">
+          <DataField>BuildCaption</DataField>
+        </Field>
+        <Field Name="ConvCaption">
+          <DataField>ConvCaption</DataField>
+        </Field>
+        <Field Name="POLPctCaption">
+          <DataField>POLPctCaption</DataField>
+        </Field>
+        <Field Name="KgofPOLCaption">
+          <DataField>KgofPOLCaption</DataField>
+        </Field>
+        <Field Name="CustomerCaption">
+          <DataField>CustomerCaption</DataField>
+        </Field>
+        <Field Name="VOCCaption">
+          <DataField>VOCCaption</DataField>
+        </Field>
+        <Field Name="CobaltCaption">
+          <DataField>CobaltCaption</DataField>
+        </Field>
+        <Field Name="ManganCaption">
+          <DataField>ManganCaption</DataField>
+        </Field>
+        <Field Name="CopperCaption">
+          <DataField>CopperCaption</DataField>
+        </Field>
+        <Field Name="MolybdCaption">
+          <DataField>MolybdCaption</DataField>
+        </Field>
+        <Field Name="ZincCaption">
+          <DataField>ZincCaption</DataField>
+        </Field>
+        <Field Name="MetylCaption">
+          <DataField>MetylCaption</DataField>
+        </Field>
+        <Field Name="ToluenCaption">
+          <DataField>ToluenCaption</DataField>
+        </Field>
+        <Field Name="XyleneCaption">
+          <DataField>XyleneCaption</DataField>
+        </Field>
+        <Field Name="CAS5160021Caption">
+          <DataField>CAS5160021Caption</DataField>
+        </Field>
+        <Field Name="OtherCaption">
+          <DataField>OtherCaption</DataField>
+        </Field>
+        <Field Name="CustTotalsCaption">
+          <DataField>CustTotalsCaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

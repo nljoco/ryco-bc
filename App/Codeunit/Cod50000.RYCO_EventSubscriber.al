@@ -124,9 +124,18 @@ codeunit 50000 "Event Subscriber"
         // nj20160511 - End
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnUpdateUnitPriceByFieldOnAfterFindPrice', '', false, false)]
+    local procedure OnUpdateUnitPriceByFieldOnAfterFindPrice(SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; CalledByFieldNo: Integer; CallingFieldNo: Integer)
+    var
+        PriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
+        RycPriceCalcMgt: Codeunit "Ryco Sales Price Calc. Mgt.";
+    begin
+        PriceCalcMgt.FindSalesLineLineDisc(SalesHeader, SalesLine);
+        RycPriceCalcMgt.FindSalesLinePrice(SalesHeader, SalesLine, CalledByFieldNo);
+    end;
+
 
     #region Table 27 - Item
-
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateItemCategorycode', '', false, false)]
     local procedure OnAfterValidateItemCategoryCode(var Item: Record Item; xItem: Record Item)
     var
@@ -160,7 +169,6 @@ codeunit 50000 "Event Subscriber"
         ItemUnitOfMeasure.Insert();
         IsHandled := true;
     end;
-
     #endregion
 
     #region Table37 - Sales Line
