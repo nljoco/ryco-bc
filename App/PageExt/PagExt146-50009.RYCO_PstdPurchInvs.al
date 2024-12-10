@@ -10,6 +10,15 @@ pageextension 50009 "Ryc Pstd. Purch Invs" extends "Posted Purchase Invoices"
             Visible = true;
             Editable = false;
         }
+        modify("No. Printed")
+        {
+            Visible = false;
+        }
+
+        modify("Cancelled")
+        {
+            Visible = false;
+        }
     }
 
     actions

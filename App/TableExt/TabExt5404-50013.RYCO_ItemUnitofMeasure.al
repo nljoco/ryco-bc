@@ -10,7 +10,7 @@ tableextension 50013 "RYCO Item Unit of Measure" extends "Item Unit of Measure"
         field(50010; "1 per Qty. per Unit of Measure"; Decimal)
         {
             //Fazle06062016
-            CaptionML = ENU = '1 / Qty. per Unit of Measure';
+            Caption = '1 / Qty. per Unit of Measure';
             DecimalPlaces = 0 : 5;
             DataClassification = ToBeClassified;
 
@@ -39,7 +39,4 @@ tableextension 50013 "RYCO Item Unit of Measure" extends "Item Unit of Measure"
             end;
         }
     }
-
-    var
-        myInt: Integer;
 }

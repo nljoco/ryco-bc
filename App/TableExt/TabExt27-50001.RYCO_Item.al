@@ -195,6 +195,7 @@ tableextension 50001 "RYCO Item" extends Item
             //FH20160928
             Caption = 'Mfg. Cost';
             DataClassification = ToBeClassified;
+            //Enabled = false;
             Editable = false;
 
             trigger OnValidate()
@@ -368,5 +369,5 @@ tableextension 50001 "RYCO Item" extends Item
 
 
     var
-        myInt: Integer;
+        CannotDeleteItemIfSalesDocExistInvoicingErr: Label 'You cannot delete %1 %2 because at least one sales document (%3 %4) includes the item.';
 }

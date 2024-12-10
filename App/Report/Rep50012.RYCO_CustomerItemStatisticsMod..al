@@ -253,10 +253,12 @@ report 50012 "Customer/Item Statistics Mod"
                     field(OnlyOnePerPage; OnlyOnePerPage)
                     {
                         Caption = 'New Page per Account';
+                        ApplicationArea = All;
                     }
                     field(PrintToExcel; PrintToExcel)
                     {
                         Caption = 'Print To Excel';
+                        ApplicationArea = All;
                     }
                 }
             }

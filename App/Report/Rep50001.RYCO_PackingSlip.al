@@ -714,7 +714,7 @@ report 50001 "Packing Slip"
 
         layout
         {
-            area(content)
+            area(Content)
             {
                 group(Options)
                 {
@@ -722,15 +722,19 @@ report 50001 "Packing Slip"
                     field(NoCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = all;
                     }
+
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = all;
                     }
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         Caption = 'Archive Document';
                         Enabled = ArchiveDocumentEnable;
+                        ApplicationArea = all;
 
                         trigger OnValidate()
                         begin
@@ -742,6 +746,7 @@ report 50001 "Packing Slip"
                     {
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
+                        ApplicationArea = all;
 
                         trigger OnValidate()
                         begin
@@ -752,6 +757,7 @@ report 50001 "Packing Slip"
                     field("Display Assembly information"; DisplayAssemblyInformation)
                     {
                         Caption = 'Show Assembly Components';
+                        ApplicationArea = all;
                     }
                 }
             }

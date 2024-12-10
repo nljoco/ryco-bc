@@ -735,15 +735,18 @@ report 50005 "Commercial Invoice"
                     field(NoCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = All;
                     }
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = All;
                     }
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         Caption = 'Archive Document';
                         Enabled = ArchiveDocumentEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -755,6 +758,7 @@ report 50005 "Commercial Invoice"
                     {
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -765,6 +769,7 @@ report 50005 "Commercial Invoice"
                     field("Display Assembly information"; DisplayAssemblyInformation)
                     {
                         Caption = 'Show Assembly Components';
+                        ApplicationArea = All;
                     }
                 }
             }

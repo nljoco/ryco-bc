@@ -331,14 +331,17 @@ report 50013 "Cust./Item Sales bySalesperson"
                     {
                         Caption = 'Salesperson To Use';
                         OptionCaption = 'Assigned To Customer,Assigned To Sales Order';
+                        ApplicationArea = All;
                     }
                     field(OnlyOnePerPage; OnlyOnePerPage)
                     {
                         Caption = 'New Page per Salesperson';
+                        ApplicationArea = All;
                     }
                     field(PrintToExcel; PrintToExcel)
                     {
                         Caption = 'Print to Excel';
+                        ApplicationArea = All;
                     }
                 }
             }

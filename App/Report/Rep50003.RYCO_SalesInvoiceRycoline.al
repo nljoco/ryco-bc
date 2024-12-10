@@ -4,6 +4,8 @@ report 50003 "Sales Invoice Rycoline"
     RDLCLayout = './App/Layout-Rdl/Rep50003.RYCO_SalesInvoiceRycoline.rdlc';
     Caption = 'Sales - Invoice';
     PreviewMode = PrintLayout;
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -737,31 +739,31 @@ report 50003 "Sales Invoice Rycoline"
                     BrkIdx := 0;
                     PrevPrintOrder := 0;
                     PrevTaxPercent := 0;
-                    //with TempSalesTaxAmtLine do begin
-                    Reset;
-                    TempSalesTaxAmtLine.SetCurrentKey("Print Order", "Tax Area Code for Key", "Tax Jurisdiction Code");
-                    if Find('-') then
-                        repeat
-                            if (TempSalesTaxAmtLine."Print Order" = 0) or
-                               (TempSalesTaxAmtLine."Print Order" <> PrevPrintOrder) or
-                               (TempSalesTaxAmtLine."Tax %" <> PrevTaxPercent)
-                            then begin
-                                BrkIdx := BrkIdx + 1;
-                                if BrkIdx > 1 then begin
-                                    if TaxArea."Country/Region" = TaxArea."Country/Region"::CA then
-                                        BreakdownTitle := Text006
-                                    else
-                                        BreakdownTitle := Text003;
+                    with TempSalesTaxAmtLine do begin
+                        Reset;
+                        SetCurrentKey("Print Order", "Tax Area Code for Key", "Tax Jurisdiction Code");
+                        if Find('-') then
+                            repeat
+                                if ("Print Order" = 0) or
+                                   ("Print Order" <> PrevPrintOrder) or
+                                   ("Tax %" <> PrevTaxPercent)
+                                then begin
+                                    BrkIdx := BrkIdx + 1;
+                                    if BrkIdx > 1 then begin
+                                        if TaxArea."Country/Region" = TaxArea."Country/Region"::CA then
+                                            BreakdownTitle := Text006
+                                        else
+                                            BreakdownTitle := Text003;
+                                    end;
+                                    if BrkIdx > ArrayLen(BreakdownAmt) then begin
+                                        BrkIdx := BrkIdx - 1;
+                                        BreakdownLabel[BrkIdx] := Text004;
+                                    end else
+                                        BreakdownLabel[BrkIdx] := StrSubstNo("Print Description", "Tax %");
                                 end;
-                                if BrkIdx > ArrayLen(BreakdownAmt) then begin
-                                    BrkIdx := BrkIdx - 1;
-                                    BreakdownLabel[BrkIdx] := Text004;
-                                end else
-                                    BreakdownLabel[BrkIdx] := StrSubstNo(TempSalesTaxAmtLine."Print Description", TempSalesTaxAmtLine."Tax %");
-                            end;
-                            BreakdownAmt[BrkIdx] := BreakdownAmt[BrkIdx] + TempSalesTaxAmtLine."Tax Amount";
-                        until Next = 0;
-                    //end;
+                                BreakdownAmt[BrkIdx] := BreakdownAmt[BrkIdx] + "Tax Amount";
+                            until Next = 0;
+                    end;
                     if BrkIdx = 1 then begin
                         Clear(BreakdownLabel);
                         Clear(BreakdownAmt);
@@ -785,23 +787,28 @@ report 50003 "Sales Invoice Rycoline"
                     field(NoCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = All;
                     }
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = All;
                     }
                     field(LogInteraction; LogInteraction)
                     {
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
+                        ApplicationArea = All;
                     }
                     field(DisplayAsmInfo; DisplayAssemblyInformation)
                     {
                         Caption = 'Show Assembly Components';
+                        ApplicationArea = All;
                     }
                     field(DisplayAdditionalFeeNote; DisplayAdditionalFeeNote)
                     {
                         Caption = 'Show Additional Fee Note';
+                        ApplicationArea = All;
                     }
                 }
             }

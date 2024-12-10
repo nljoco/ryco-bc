@@ -18,6 +18,35 @@ pageextension 50010 "Ryc Phys. Inventory Journal" extends "Phys. Inventory Journ
 
     actions
     {
+        modify(CalculateInventory)
+        {
+            Visible = false;
+            Enabled = false;
+        }
+        addbefore(CalculateCountingPeriod)
+        {
+            action(RycCalculateInventory)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Ryc Calculate Inventory';
+                Ellipsis = true;
+                Image = CalculateInventory;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Category5;
+                Scope = Repeater;
+                ToolTip = 'Start the process of counting inventory by filling the journal with known quantities.';
+
+                trigger OnAction()
+                var
+                    CalcQtyOnHand: Report "RYCO Calculate Inventory";
+                begin
+                    CalcQtyOnHand.SetItemJnlLine(Rec);
+                    CalcQtyOnHand.RunModal;
+                    Clear(CalcQtyOnHand);
+                end;
+            }
+        }
     }
 
     var

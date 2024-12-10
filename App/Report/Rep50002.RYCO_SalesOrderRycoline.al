@@ -4,6 +4,8 @@ report 50002 "Sales Order Rycoline"
     RDLCLayout = './App/Layout-Rdl/Rep50002.RYCO_SalesOrderRycoline.rdlc';
     Caption = 'Sales Order';
     PreviewMode = PrintLayout;
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -716,15 +718,18 @@ report 50002 "Sales Order Rycoline"
                     field(NoCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = all;
                     }
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = all;
                     }
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         Caption = 'Archive Document';
                         Enabled = ArchiveDocumentEnable;
+                        ApplicationArea = all;
 
                         trigger OnValidate()
                         begin
@@ -735,6 +740,7 @@ report 50002 "Sales Order Rycoline"
                     field(LogInteraction; LogInteraction)
                     {
                         Caption = 'Log Interaction';
+                        ApplicationArea = all;
                         Enabled = LogInteractionEnable;
 
                         trigger OnValidate()
@@ -746,6 +752,7 @@ report 50002 "Sales Order Rycoline"
                     field("Display Assembly information"; DisplayAssemblyInformation)
                     {
                         Caption = 'Show Assembly Components';
+                        ApplicationArea = all;
                     }
                 }
             }

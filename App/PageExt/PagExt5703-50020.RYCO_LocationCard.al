@@ -14,6 +14,34 @@ pageextension 50020 "Ryc Location Card" extends "Location Card"
                 ApplicationArea = All;
             }
         }
+
+        modify("County")
+        {
+            caption = 'State / ZIP code';
+        }
+        modify("Post Code")
+        {
+            Caption = 'ZIP Code';
+        }
+        modify("ElectronicDocument")
+        {
+            Visible = false;
+        }
+        modify("Fax No.")
+        {
+            Visible = true;
+            Importance = Standard;
+        }
+
+        modify("Use ADCs")
+        {
+            Visible = true;
+        }
+
+        modify("Job")
+        {
+            Visible = false;
+        }
     }
 
     actions

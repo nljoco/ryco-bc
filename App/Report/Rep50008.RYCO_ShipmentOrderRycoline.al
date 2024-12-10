@@ -2,8 +2,10 @@ report 50008 "Shipment Order Rycoline"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50008.RYCO_ShipmentOrderRycoline.rdlc';
-    Caption = 'Sales Order';
+    Caption = 'Sales Shipment';
     PreviewMode = PrintLayout;
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -730,15 +732,18 @@ report 50008 "Shipment Order Rycoline"
                     field(NoCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = All;
                     }
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = All;
                     }
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         Caption = 'Archive Document';
                         Enabled = ArchiveDocumentEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -750,6 +755,7 @@ report 50008 "Shipment Order Rycoline"
                     {
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -760,6 +766,7 @@ report 50008 "Shipment Order Rycoline"
                     field("Display Assembly information"; DisplayAssemblyInformation)
                     {
                         Caption = 'Show Assembly Components';
+                        ApplicationArea = All;
                     }
                 }
             }

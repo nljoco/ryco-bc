@@ -3,7 +3,10 @@ report 50016 "Pollutants - Items for a Cust."
     // ID2136,nj20180917
     // - added new Pollutant
     DefaultLayout = RDLC;
+    Caption = 'Pollutants - Items for a Customer';
     RDLCLayout = './App/Layout-Rdl/Rep50016.RYCO_PollutantsItemsforaCust.rdlc';
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
 
     dataset
@@ -234,42 +237,42 @@ report 50016 "Pollutants - Items for a Cust."
             trigger OnAfterGetRecord()
             begin
                 OnLineNumber := OnLineNumber + 1;
-                //with grecTempItem do begin
-                if OnLineNumber = 1 then
-                    FindFirst
-                else
-                    Next;
-                grecCustomer.Get(grecTempItem."Item Disc. Group");  // Customer No.
-                grecUOM.Get(grecTempItem."Base Unit of Measure");
-                if grecTempItem."Base Unit of Measure" <> 'KG' then begin
+                with grecTempItem do begin
+                    if OnLineNumber = 1 then
+                        FindFirst
+                    else
+                        Next;
+                    grecCustomer.Get(grecTempItem."Item Disc. Group");  // Customer No.
+                    grecUOM.Get(grecTempItem."Base Unit of Measure");
+                    if grecTempItem."Base Unit of Measure" <> 'KG' then begin
 
-                    if (grecTempItem.VOC > 0) or (grecTempItem.Cobalt > 0) or (grecTempItem.Manganese > 0) or
-                       (grecTempItem.Copper > 0) or (grecTempItem.MolyBdenum > 0) or (grecTempItem.Zinc > 0) or
-                       (grecTempItem."Methylene Chloride" > 0) or (grecTempItem.Toluene > 0) or
-                       (grecTempItem.Xylene > 0) or (grecTempItem.Other > 0) or
-                       (grecTempItem."CAS5160-02-1" > 0) then begin   //ID2136
-                        grecItemUOM.Get(grecTempItem."No.", 'KG');
+                        if (grecTempItem.VOC > 0) or (grecTempItem.Cobalt > 0) or (grecTempItem.Manganese > 0) or
+                        (grecTempItem.Copper > 0) or (grecTempItem.MolyBdenum > 0) or (grecTempItem.Zinc > 0) or
+                        (grecTempItem."Methylene Chloride" > 0) or (grecTempItem.Toluene > 0) or
+                        (grecTempItem.Xylene > 0) or (grecTempItem.Other > 0) or
+                        (grecTempItem."CAS5160-02-1" > 0) then begin   //ID2136
+                            grecItemUOM.Get(grecTempItem."No.", 'KG');
+                        end else begin
+                            grecItemUOM.Get(grecTempItem."No.", grecTempItem."Base Unit of Measure");
+                        end;
+
+                        //grecItemUOM.GET(grecTempItem."No.",'KG')
                     end else begin
                         grecItemUOM.Get(grecTempItem."No.", grecTempItem."Base Unit of Measure");
                     end;
 
-                    //grecItemUOM.GET(grecTempItem."No.",'KG')
-                end else begin
-                    grecItemUOM.Get(grecTempItem."No.", grecTempItem."Base Unit of Measure");
+                    gdecVOC := grecTempItem.VOC * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecCobalt := grecTempItem.Cobalt * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecManganese := grecTempItem.Manganese * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecCopper := grecTempItem.Copper * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecMolybdenum := grecTempItem.MolyBdenum * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecZinc := grecTempItem.Zinc * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecMethylene := grecTempItem."Methylene Chloride" * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecToluene := grecTempItem.Toluene * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecXylene := grecTempItem.Xylene * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecOther := grecTempItem.Other * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
+                    gdecCAS5160021 := grecTempItem."CAS5160-02-1" * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;  //ID2136
                 end;
-
-                gdecVOC := grecTempItem.VOC * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecCobalt := grecTempItem.Cobalt * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecManganese := grecTempItem.Manganese * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecCopper := grecTempItem.Copper * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecMolybdenum := grecTempItem.MolyBdenum * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecZinc := grecTempItem.Zinc * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecMethylene := grecTempItem."Methylene Chloride" * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecToluene := grecTempItem.Toluene * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecXylene := grecTempItem.Xylene * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecOther := grecTempItem.Other * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;
-                gdecCAS5160021 := grecTempItem."CAS5160-02-1" * grecItemUOM."1 per Qty. per Unit of Measure" * grecTempItem."Reorder Point" / 100;  //ID2136
-                //end;
             end;
 
             trigger OnPreDataItem()

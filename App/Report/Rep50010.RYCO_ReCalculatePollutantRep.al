@@ -374,6 +374,7 @@ report 50010 "ReCalculate Pollutant Rep"
                     field(gUpdateItem; gUpdateItem)
                     {
                         Caption = 'Update Item Card';
+                        ApplicationArea = All;
                     }
                 }
             }

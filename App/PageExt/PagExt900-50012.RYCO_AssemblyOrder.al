@@ -27,6 +27,7 @@ pageextension 50012 "Ryc Assembly Order" extends "Assembly Order"
             field(decTotalExpectedKg; gdecTotalExpectedKg)
             {
                 ApplicationArea = All;
+                Visible = false;
             }
             field("Total Ink Kg (Lines)"; Rec."Total Ink Kg (Lines)")
             {
@@ -35,6 +36,28 @@ pageextension 50012 "Ryc Assembly Order" extends "Assembly Order"
             field(gdecTotalComponentKg; gdecTotalComponentKg)
             {
                 ApplicationArea = All;
+                Caption = 'Total Component Kg.';
+            }
+        }
+        addafter("Shortcut Dimension 2 Code")
+        {
+            field("Posting no. series"; rec."Posting No. Series")
+            {
+                ApplicationArea = All;
+                Visible = false;
+                trigger OnLookup(var Text: Text): Boolean
+                var
+                    AsmHeader: Record "Assembly Header";
+                    NoSeriesMgt: Codeunit NoSeriesManagement;
+                    AssemblySetup: Record "Assembly Setup";
+                begin
+                    AsmHeader := Rec;
+                    AssemblySetup.Get();
+                    rec.Ryco_TestNoSeries();
+                    if NoSeriesMgt.LookupSeries(AssemblySetup."Posted Assembly Order Nos.", AsmHeader."Posting No. Series") then
+                        AsmHeader.Validate("Posting No. Series");
+                    Rec := AsmHeader;
+                end;
             }
         }
         modify(Quantity)
@@ -66,6 +89,24 @@ pageextension 50012 "Ryc Assembly Order" extends "Assembly Order"
                 END;
                 //Fazle05262016--<
             end;
+        }
+
+        modify("No.")
+        {
+            trigger OnAssistEdit()
+            begin
+                if rec.Ryco_AssistEdit(xRec) then
+                    CurrPage.Update();
+            end;
+        }
+
+        modify("Shortcut Dimension 1 Code")
+        {
+            Visible = false;
+        }
+        modify("Shortcut Dimension 2 Code")
+        {
+            Visible = false;
         }
     }
 
@@ -105,5 +146,4 @@ pageextension 50012 "Ryc Assembly Order" extends "Assembly Order"
         END;
         //Fazle05262016--<
     end;
-
 }

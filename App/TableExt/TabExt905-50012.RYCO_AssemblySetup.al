@@ -73,7 +73,7 @@ tableextension 50012 "RYCO Assembly Setup" extends "Assembly Setup"
         field(50021; "Assembly Order Nos. - MTL"; Code[10])
         {
             //nj20170123
-            CaptionML = ENU = 'Assembly Order Nos. - MTL', ESM = 'Núms. pedidos ensamblado', FRC = 'Numéros ordres d''assemblage', ENC = 'Assembly Order Nos. - MTL';
+            Caption = 'Assembly Order Nos. - MTL';
             TableRelation = "No. Series";
             AccessByPermission = TableData "Sales Shipment Header" = R;
             DataClassification = ToBeClassified;
@@ -82,14 +82,14 @@ tableextension 50012 "RYCO Assembly Setup" extends "Assembly Setup"
         field(50022; "Pstd Assembly Order Nos. - MTL"; Code[10])
         {
             //nj20170123
-            CaptionML = ENU = 'Pstd Assembly Order Nos. - MTL', ESM = 'Núms. pedidos registrados ensamblado', FRC = 'Numéros ordres d''assemblage reportés', ENC = 'Pstd Assembly Order Nos. - MTL';
+            Caption = 'Pstd Assembly Order Nos. - MTL';
             TableRelation = "No. Series";
             DataClassification = ToBeClassified;
         }
         field(50023; "Assembly Order Nos. - CGY"; Code[10])
         {
             //nj20170123
-            CaptionMl = ENU = 'Assembly Order Nos. - CGY', ESM = 'Núms. pedidos ensamblado', FRC = 'Numéros ordres d''assemblage', ENC = 'Assembly Order Nos. - CGY';
+            Caption = 'Assembly Order Nos. - CGY';
             TableRelation = "No. Series";
             AccessByPermission = TableData "Sales Shipment Header" = R;
             DataClassification = ToBeClassified;
@@ -97,7 +97,7 @@ tableextension 50012 "RYCO Assembly Setup" extends "Assembly Setup"
         field(50024; "Pstd Assembly Order Nos. - CGY"; Code[10])
         {
             //nj20170123
-            CaptionML = ENU = 'Pstd Assembly Order Nos. - CGY', ESM = 'Núms. pedidos registrados ensamblado', FRC = 'Numéros ordres d''assemblage reportés', ENC = 'Pstd Assembly Order Nos. - CGY';
+            Caption = 'Pstd Assembly Order Nos. - CGY';
             TableRelation = "No. Series";
             DataClassification = ToBeClassified;
         }

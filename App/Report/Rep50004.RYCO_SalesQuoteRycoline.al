@@ -6,6 +6,8 @@ report 50004 "Sales Quote Rycoline"
 
     Caption = 'Sales - Quote';
     PreviewMode = PrintLayout;
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -82,7 +84,7 @@ report 50004 "Sales Quote Rycoline"
                         //with TempSalesTaxAmtLine do begin
                         Reset;
                         TempSalesTaxAmtLine.SetCurrentKey("Print Order", "Tax Area Code for Key", "Tax Jurisdiction Code");
-                        if Find('-') then
+                        if TempSalesTaxAmtLine.Find('-') then
                             repeat
                                 if (TempSalesTaxAmtLine."Print Order" = 0) or
                                    (TempSalesTaxAmtLine."Print Order" <> PrevPrintOrder) or
@@ -102,7 +104,7 @@ report 50004 "Sales Quote Rycoline"
                                         BreakdownLabel[BrkIdx] := StrSubstNo(TempSalesTaxAmtLine."Print Description", TempSalesTaxAmtLine."Tax %");
                                 end;
                                 BreakdownAmt[BrkIdx] := BreakdownAmt[BrkIdx] + TempSalesTaxAmtLine."Tax Amount";
-                            until Next = 0;
+                            until TempSalesTaxAmtLine.Next = 0;
                         //end;
                         if BrkIdx = 1 then begin
                             Clear(BreakdownLabel);
@@ -718,15 +720,18 @@ report 50004 "Sales Quote Rycoline"
                     field(NoCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = all;
                     }
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = All;
                     }
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         Caption = 'Archive Document';
                         Enabled = ArchiveDocumentEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -738,6 +743,7 @@ report 50004 "Sales Quote Rycoline"
                     {
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -748,6 +754,7 @@ report 50004 "Sales Quote Rycoline"
                     field("Display Assembly information"; DisplayAssemblyInformation)
                     {
                         Caption = 'Show Assembly Components';
+                        ApplicationArea = All;
                     }
                 }
             }

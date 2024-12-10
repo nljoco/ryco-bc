@@ -19,7 +19,4 @@ tableextension 50005 "RYCO User Setup" extends "User Setup"
 
         }
     }
-
-    var
-        myInt: Integer;
 }

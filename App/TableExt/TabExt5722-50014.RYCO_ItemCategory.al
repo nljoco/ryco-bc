@@ -10,7 +10,6 @@ tableextension 50014 "RYCO Item Category" extends "Item Category"
     */
     fields
     {
-        // Add changes to table fields here
         field(50000; "Ink"; Boolean)
         {
             //nj20160505
@@ -30,7 +29,4 @@ tableextension 50014 "RYCO Item Category" extends "Item Category"
             DataClassification = ToBeClassified;
         }
     }
-
-    var
-        myInt: Integer;
 }

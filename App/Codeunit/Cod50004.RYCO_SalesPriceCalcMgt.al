@@ -13,6 +13,7 @@ codeunit 50004 "Ryco Sales Price Calc. Mgt."
         TempSalesPrice: Record "Sales Price" temporary;
         PricesInCurrency: Boolean;
         Currency: Record Currency;
+        recResPrice: Record "Resource Price";
         CurrencyFactor: Decimal;
         ExchRateDate: Date;
         GLSetup: Record "General Ledger Setup";
@@ -27,6 +28,89 @@ codeunit 50004 "Ryco Sales Price Calc. Mgt."
         AllowInvDisc: Boolean;
         FoundSalesPrice: Boolean;
         DateCaption: Text[30];
+
+    procedure FindSalesLinePrice(SalesHeader: Record "Sales Header"; VAR SalesLine: Record "Sales Line"; CalledByFieldNo: Integer)
+    var
+    begin
+        //WITH SalesLine DO BEGIN
+        SetCurrency(
+          SalesHeader."Currency Code", SalesHeader."Currency Factor", cuSalesPriceCalcMgt.SalesHeaderExchDate(SalesHeader));
+        SetVAT(SalesHeader."Prices Including VAT", SalesLine."VAT %", SalesLine."VAT Calculation Type", SalesLine."VAT Bus. Posting Group");
+        SetUoM(ABS(SalesLine.Quantity), SalesLine."Qty. per Unit of Measure");
+        SetLineDisc(SalesLine."Line Discount %", SalesLine."Allow Line Disc.", SalesLine."Allow Invoice Disc.");
+
+        SalesLine.TESTFIELD("Qty. per Unit of Measure");
+        IF PricesInCurrency THEN
+            SalesHeader.TESTFIELD("Currency Factor");
+
+        CASE SalesLine.Type OF
+            SalesLine.Type::Item:
+                BEGIN
+                    recItem.GET(SalesLine."No.");
+                    SalesLinePriceExists(SalesHeader, SalesLine, FALSE);
+
+                    //Fazle06062016-->copied from REMOTE2k3>"JANUS\DEV2000">NGK_SP3 (NAV 4)
+                    //<change rpd05>
+                    //IF (SalesHeader."Sell-to Customer No." <> '') AND (SalesHeader."Ship-to Code" <> '') THEN BEGIN
+                    //  CalcBestUnitPriceShipTo(TempSalesPrice,SalesHeader."Sell-to Customer No.",SalesHeader."Ship-to Code");
+                    //  IF NOT(FoundSalesPrice) AND (SalesHeader."Sell-to Customer No." <> '') THEN BEGIN
+                    //    CalcBestUnitPriceCustomer(TempSalesPrice,SalesHeader."Sell-to Customer No.");
+                    //    IF NOT(FoundSalesPrice) THEN
+                    //CalcBestUnitPrice(TempSalesPrice);
+                    //  END;
+                    //END ELSE BEGIN
+                    IF (SalesHeader."Sell-to Customer No." <> '') THEN BEGIN
+                        CalcBestUnitPriceCustomer(TempSalesPrice, SalesHeader."Sell-to Customer No.");
+                        IF NOT (FoundSalesPrice) THEN
+                            CalcBestUnitPrice(TempSalesPrice);
+                    END ELSE
+                        CalcBestUnitPrice(TempSalesPrice);
+                    //END;
+                    //</change>
+
+                    //CalcBestUnitPrice(TempSalesPrice);
+                    //Fazle06062016--<
+                    IF FoundSalesPrice OR
+                       NOT ((CalledByFieldNo = SalesLine.FIELDNO(Quantity)) OR
+                            (CalledByFieldNo = SalesLine.FIELDNO("Variant Code")))
+                    THEN BEGIN
+                        SalesLine."Allow Line Disc." := TempSalesPrice."Allow Line Disc.";
+                        SalesLine."Allow Invoice Disc." := TempSalesPrice."Allow Invoice Disc.";
+                        SalesLine."Unit Price" := TempSalesPrice."Unit Price";
+                    END;
+                    IF NOT SalesLine."Allow Line Disc." THEN
+                        SalesLine."Line Discount %" := 0;
+                END;
+            SalesLine.Type::Resource:
+                BEGIN
+                    SetResPrice(SalesLine."No.", SalesLine."Work Type Code", SalesLine."Currency Code");
+                    CODEUNIT.RUN(CODEUNIT::"Resource-Find Price", recResPrice);
+
+                    ConvertPriceToVAT(FALSE, '', '', recResPrice."Unit Price");
+                    ConvertPriceLCYToFCY(recResPrice."Currency Code", recResPrice."Unit Price");
+                    SalesLine."Unit Price" := recResPrice."Unit Price" * SalesLine."Qty. per Unit of Measure";
+                END;
+        END;
+        //END;
+    end;
+
+    procedure SalesLinePriceExists(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; ShowAll: Boolean) Result: Boolean
+    var
+        IsHandled: Boolean;
+    begin
+        //with SalesLine do
+        if (SalesLine.Type = SalesLine.Type::Item) and recItem.Get(SalesLine."No.") then begin
+            IsHandled := false;
+            if not IsHandled then begin
+                cuSalesPriceCalcMgt.FindSalesPrice(
+                  TempSalesPrice, GetCustNoForSalesHeader(SalesHeader), SalesHeader."Bill-to Contact No.",
+                  SalesLine."Customer Price Group", '', SalesLine."No.", SalesLine."Variant Code", SalesLine."Unit of Measure Code",
+                  SalesHeader."Currency Code", SalesHeaderStartDate(SalesHeader, DateCaption), ShowAll);
+            end;
+            exit(TempSalesPrice.FindFirst());
+        end;
+        Result := false;
+    end;
 
     procedure CalcBestUnitPriceShipTo(VAR SalesPrice: Record "Sales Price"; CustNo: Code[20]; ShipTo: Code[10])
     var
@@ -97,8 +181,8 @@ codeunit 50004 "Ryco Sales Price Calc. Mgt."
                         ((BestSalesPrice."Currency Code" = '') OR (SalesPrice."Currency Code" <> '')) AND
                       ((BestSalesPrice."Variant Code" = '') OR (SalesPrice."Variant Code" <> '')):
                             IF (BestSalesPrice."Unit Price" = 0) OR
-                               (CalcLineAmount(BestSalesPrice) > CalcLineAmount(SalesPrice))
-                            THEN
+                                (CalcLineAmount(BestSalesPrice) > CalcLineAmount(SalesPrice))
+                             THEN
                                 BestSalesPrice := SalesPrice;
                     END;
                 END;
@@ -268,6 +352,16 @@ codeunit 50004 "Ryco Sales Price Calc. Mgt."
         SalesPrice := BestSalesPrice;
     end;
 
+    procedure SetResPrice(Code2: Code[20]; WorkTypeCode: Code[10]; CurrencyCode: Code[10])
+    begin
+        //with recResPrice do begin
+        recResPrice.Init();
+        recResPrice.Code := Code2;
+        recResPrice."Work Type Code" := WorkTypeCode;
+        recResPrice."Currency Code" := CurrencyCode;
+        //end;
+    end;
+
     local procedure SetCurrency(CurrencyCode2: Code[10]; CurrencyFactor2: Decimal; ExchRateDate2: Date)
     var
     begin
@@ -393,6 +487,14 @@ codeunit 50004 "Ryco Sales Price Calc. Mgt."
                 EXIT(SalesPrice."Unit Price" * (1 - LineDiscPerCent / 100));
             EXIT(SalesPrice."Unit Price");
         END;
+    end;
+
+    local procedure GetCustNoForSalesHeader(SalesHeader: Record "Sales Header"): Code[20]
+    var
+        CustNo: Code[20];
+    begin
+        CustNo := SalesHeader."Bill-to Customer No.";
+        exit(CustNo);
     end;
 
 }

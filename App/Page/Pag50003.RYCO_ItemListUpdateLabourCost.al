@@ -1,9 +1,14 @@
 page 50003 "Item List - Update Labour Cost"
 {
+    Caption = 'Item List - Update Labour Cost';
     SourceTable = Item;
     SourceTableView = SORTING("No.")
                       ORDER(Ascending)
                       WHERE("Assembly BOM" = CONST(true));
+    ApplicationArea = All;
+    UsageCategory = Lists;
+
+    PageType = List;
 
     layout
     {

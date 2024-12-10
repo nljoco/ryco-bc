@@ -1,5 +1,9 @@
 page 50001 "BOM Instruction List"
 {
+    Caption = 'BOM Instruction List';
+    PageType = List;
+    ApplicationArea = all;
+    UsageCategory = Lists;
     SourceTable = "BOM Instruction";
 
     layout

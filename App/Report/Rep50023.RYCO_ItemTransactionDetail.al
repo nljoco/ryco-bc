@@ -4,7 +4,9 @@ report 50023 "RYCO Item Transaction Detail"
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50023.RYCO_ItemTransactionDetail.rdlc';
 
-    Caption = 'Ryc Item Transaction Detail';
+    Caption = 'Item Transaction Detail';
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -445,6 +447,7 @@ report 50023 "RYCO Item Transaction Detail"
                     field(PrintOnlyOnePerPage; PrintOnlyOnePerPage)
                     {
                         Caption = 'New Page per Item';
+                        ApplicationArea = All;
                     }
                 }
             }

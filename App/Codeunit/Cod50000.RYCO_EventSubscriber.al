@@ -1,6 +1,7 @@
 codeunit 50000 "Event Subscriber"
 {
     //Sales-Post
+    #region Page 30 - Item Card
     [EventSubscriber(ObjectType::Page, Page::"Item Card", 'OnBeforeOnOpenPage', '', false, false)]
     local procedure OnBeforeOnOpenPage(var Item: Record Item)
     var
@@ -50,35 +51,75 @@ codeunit 50000 "Event Subscriber"
         EXIT(ldecMfgCost);
         //nj20190409 - End
     end;
+    #endregion
 
+    #region Codeunit 81 - Sales-Post (Yes/No)
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post (Yes/No)", 'OnBeforeConfirmSalesPost', '', false, false)]
     local procedure OnBeforeConfirmSalesPost(var SalesHeader: Record "Sales Header"; var HideDialog: Boolean; var IsHandled: Boolean; var DefaultOption: Integer; var PostAndSend: Boolean)
     var
     begin
         DefaultOption := 1;
     end;
+    #endregion
 
+    #region Codeunit 82 - Sales-Post + Print
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post + Print", 'OnBeforeConfirmPost', '', false, false)]
     local procedure OnBeforeConfirmPost(var SalesHeader: Record "Sales Header"; var HideDialog: Boolean; var IsHandled: Boolean; var SendReportAsEmail: Boolean; var DefaultOption: Integer)
     var
     begin
         DefaultOption := 1;
     end;
+    #endregion
 
+    #region Codeunit 91 - Purch.-Post (Yes/No)
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post (Yes/No)", 'OnBeforeConfirmPost', '', false, false)]
     local procedure OnBeforeConfirmPost_P1(var PurchaseHeader: Record "Purchase Header"; var HideDialog: Boolean; var IsHandled: Boolean; var DefaultOption: Integer)
     var
     begin
         DefaultOption := 1;
     end;
+    #endregion
 
+    #region Codeunit 92 - Purch.-Post + Print
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post + Print", 'OnBeforeConfirmPost', '', false, false)]
     local procedure OnBeforeConfirmPost_P2(var PurchaseHeader: Record "Purchase Header"; var HideDialog: Boolean; var IsHandled: Boolean; var DefaultOption: Integer)
     var
     begin
         DefaultOption := 1;
     end;
+    #endregion
 
+    #region Codeunit 228=9 - Document-rint
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Document-Print", 'OnBeforePrintAsmHeader', '', false, false)]
+    local procedure OnBeforePrintAsmHeader(var AssemblyHeader: Record "Assembly Header"; ReportUsage: Integer; var IsPrinted: Boolean)
+    var
+        Text001: Label 'Cannot Print, Order is %1';
+        ReportSelections: Record "Report Selections";
+
+    begin
+        if AssemblyHeader."Document Type" = AssemblyHeader."Document Type"::Order then begin
+            //Fazle05312016-->
+            //DocPrint.PrintAsmHeader(Rec);
+            IF AssemblyHeader.Status = AssemblyHeader.Status::Open THEN BEGIN
+                ReportSelections.PrintReport(ReportUsage, AssemblyHeader);
+                AssemblyHeader.Status := AssemblyHeader.Status::Released;
+                AssemblyHeader.Modify();
+                IsPrinted := true;
+                //TESTFIELD(Status,Status::Released);
+                //Status := Status::Open;
+                //MODIFY;
+                //COMMIT;
+                //Status := Status::Released;
+            END
+            ELSE BEGIN
+                ERROR(STRSUBSTNO(Text001, AssemblyHeader.Status));
+            END;
+            //Fazle05312016--<
+        end;
+    end;
+    #endregion
+
+    #region Codeunit 900 - Assembly-Post
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly-Post", 'OnAfterFinalizePost', '', false, false)]
     local procedure OnAfterFinalizePost(var AssemblyHeader: Record "Assembly Header")
     var
@@ -86,11 +127,48 @@ codeunit 50000 "Event Subscriber"
         UpdateItem(AssemblyHeader);//Fazle05312016
     end;
 
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly-Post", 'OnBeforeDeleteAssemblyDocument', '', false, false)]
+    local procedure OnBeforeDeleteAssemblyDocument(AssemblyHeader: Record "Assembly Header"; var IsHandled: Boolean)
+    var
+        AssemblyLine: Record "Assembly Line";
+        AssemblyCommentLine: Record "Assembly Comment Line";
+        AssemblyLineReserve: Codeunit "Assembly Line-Reserve";
+    begin
+        with AssemblyHeader do begin
+            // Delete header and lines
+            AssemblyLine.Reset();
+            AssemblyLine.SetRange("Document Type", "Document Type");
+            AssemblyLine.SetRange("Document No.", "No.");
+            if "Remaining Quantity (Base)" <> 0 then begin //Fazle05302016
+                if HasLinks then
+                    DeleteLinks();
+                DeleteWhseRequest(AssemblyHeader);
+                Delete();
+                if AssemblyLine.Find('-') then
+                    repeat
+                        if AssemblyLine.HasLinks then
+                            DeleteLinks();
+                        AssemblyLineReserve.SetDeleteItemTracking(true);
+                        AssemblyLineReserve.DeleteLine(AssemblyLine);
+                    until AssemblyLine.Next() = 0;
+                AssemblyLine.DeleteAll();
+                AssemblyCommentLine.SetCurrentKey("Document Type", "Document No.");
+                AssemblyCommentLine.SetRange("Document Type", "Document Type");
+                AssemblyCommentLine.SetRange("Document No.", "No.");
+                if not AssemblyCommentLine.IsEmpty() then
+                    AssemblyCommentLine.DeleteAll();
+            end;
+        end;
+        //IsHandled := true;
+    end;
+
     local procedure UpdateItem(AssemblyHeader: Record "Assembly Header")
     var
         lrecItem: Record Item;
+        lrecItemMaster: Record Item;
+
     begin
-        // nj20170202 - Start
         IF lrecItem.GET(AssemblyHeader."Item No.") THEN BEGIN
             CASE AssemblyHeader."Location Code" OF
                 'CALGARY':
@@ -109,10 +187,48 @@ codeunit 50000 "Event Subscriber"
                 END;
             END;
             lrecItem.Modify();
+            //nj20241003 - Start
+            if (lrecItem."Master Item No." = false) and (lrecItem."Linked to Master Item No." <> '') then begin
+                if lrecItemMaster.GET(lrecItem."Linked to Master Item No.") then begin
+                    case AssemblyHeader."Location Code" of
+                        'CALGARY':
+                            begin
+                                lrecItemMaster."Prev Assembly Order No. - CGY" := lrecItemMaster."Last Assembly Order No. - CGY";
+                                lrecItemMaster."Last Assembly Order No. - CGY" := AssemblyHeader."No.";
+                            end;
+                        'MONTREAL':
+                            begin
+                                lrecItemMaster."Prev Assembly Order No. - MTL" := lrecItemMaster."Last Assembly Order No. - MTL";
+                                lrecItemMaster."Last Assembly Order No. - MTL" := AssemblyHeader."No.";
+                            end;
+                        else begin
+                            lrecItemMaster."Prev Assembly Order No." := lrecItemMaster."Last Assembly Order No.";
+                            lrecItemMaster."Last Assembly Order No." := AssemblyHeader."No.";
+                        end;
+                    end;
+                    lrecItemMaster.Modify();
+                end;
+            end;
+            //nj20241003 - End
         END;
-        // nj20170202 - End
     end;
 
+    local procedure DeleteWhseRequest(AssemblyHeader: Record "Assembly Header")
+    var
+        WhseRqst: Record "Warehouse Request";
+    begin
+        with WhseRqst do begin
+            SetCurrentKey("Source Type", "Source Subtype", "Source No.");
+            SetRange("Source Type", DATABASE::"Assembly Line");
+            SetRange("Source Subtype", AssemblyHeader."Document Type");
+            SetRange("Source No.", AssemblyHeader."No.");
+            if not IsEmpty() then
+                DeleteAll(true);
+        end;
+    end;
+    #endregion
+
+    #region Codeunit 905 - Assembly Line Management
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly Line Management", 'OnAfterTransferBOMComponent', '', false, false)]
     local procedure OnAfterTransferBOMComponent(var AssemblyLine: Record "Assembly Line"; BOMComponent: Record "BOM Component"; AssemblyHeader: Record "Assembly Header")
     var
@@ -124,9 +240,27 @@ codeunit 50000 "Event Subscriber"
         // nj20160511 - End
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly Line Management", 'OnBeforeUpdateQuantityToConsume', '', false, false)]
+    local procedure OnBeforeUpdateQuantityToConsume(AssemblyHeader: Record "Assembly Header"; var AssemblyLine: Record "Assembly Line"; var QtyToConsume: Decimal; var IsHandled: Boolean)
+    begin
+        AssemblyLine.Validate("Quantity to Consume", QtyToConsume);
+        IsHandled := true;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly Line Management", 'OnBeforeUpdateExistingLine', '', false, false)]
+    local procedure OnBeforeUpdateExistingLine(var AsmHeader: Record "Assembly Header"; OldAsmHeader: Record "Assembly Header"; CurrFieldNo: Integer; var AssemblyLine: Record "Assembly Line"; UpdateDueDate: Boolean; UpdateLocation: Boolean; UpdateQuantity: Boolean; UpdateUOM: Boolean; UpdateQtyToConsume: Boolean; UpdateDimension: Boolean; var IsHandled: Boolean)
+    begin
+        //Message('Original quantity to assemble: %1', AsmHeader."Quantity to Assemble");
+        //Message('Old quantity to assemble: %1', OldAsmHeader."Quantity to Assemble");
+
+        If (AsmHeader."Quantity to Assemble" <> OldAsmHeader."Quantity to Assemble") then begin
+            IsHandled := true;
+            //UpdateQtyToConsume := false;
+        end
+    end;
+    #endregion
 
     #region Table 27 - Item
-
     [EventSubscriber(ObjectType::Table, Database::Item, 'OnAfterValidateItemCategorycode', '', false, false)]
     local procedure OnAfterValidateItemCategoryCode(var Item: Record Item; xItem: Record Item)
     var
@@ -203,6 +337,14 @@ codeunit 50000 "Event Subscriber"
         //ID2136 end
 
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnValidateQuantityOnBeforeResetAmounts', '', false, false)]
+    local procedure OnValidateQuantityOnBeforeResetAmounts(var SalesLine: Record "Sales Line"; xSalesLine: Record "Sales Line"; var IsHandled: Boolean)
+    begin
+        If SalesLine.Type = SalesLine.Type::Item THEN begin
+            SalesLine.Validate(SalesLine."Selling Unit of Measure");
+        end;
+    end;
     #endregion
 
     #region Table 90 - BOM Component
@@ -248,8 +390,9 @@ codeunit 50000 "Event Subscriber"
                     IF lrecUserSetup."Location Code" = 'MONTREAL' THEN BEGIN
                         IF (AssemblyHeader."No. Series" <> '') AND (AssemblySetup."Assembly Order Nos. - MTL" = AssemblySetup."Pstd Assembly Order Nos. - MTL") THEN
                             AssemblyHeader."Posting No. Series" := AssemblyHeader."No. Series"
-                        ELSE
+                        ELSE begin
                             NoSeriesMgt.SetDefaultSeries(AssemblyHeader."Posting No. Series", AssemblySetup."Pstd Assembly Order Nos. - MTL");
+                        end;
                     END ELSE BEGIN
                         IF lrecUserSetup."Location Code" = 'CALGARY' THEN BEGIN
                             IF (AssemblyHeader."No. Series" <> '') AND (AssemblySetup."Assembly Order Nos. - CGY" = AssemblySetup."Pstd Assembly Order Nos. - CGY") THEN
@@ -266,10 +409,10 @@ codeunit 50000 "Event Subscriber"
                     end;
                 end;
         end;
+        AssemblyHeader.Ryco_SetDefaultLocation();
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Assembly Header", 'OnBeforeUpdateAssemblyLinesAndVerifyReserveQuantity', '', false, false)]
-
     local procedure OnBeforeUpdateAssemblyLinesAndVerifyReserveQuantity(var AssemblyHeader: Record "Assembly Header"; var xAssemblyHeader: Record "Assembly Header"; CallingFieldNo: Integer; CurrentFieldNum: Integer; var IsHandled: Boolean)
     var
         lrecBuildQuantity: Record "Build Quantity";
@@ -277,8 +420,12 @@ codeunit 50000 "Event Subscriber"
         AssemblyLineMgt: Codeunit "Ryco Assembly Line Mgt.";
         blnReplLinesFromBOM: Boolean;
         AssemblyHeaderReserve: Codeunit "Assembly Header-Reserve";
-
     begin
+        AssemblyHeader.InitRemainingQty;
+
+        AssemblyHeader.InitQtyToAssemble;
+
+        AssemblyHeader.VALIDATE("Quantity to Assemble");
         //FH20160929-->
         // {
         // //Fazle05252016-->
@@ -311,58 +458,88 @@ codeunit 50000 "Event Subscriber"
         blnReplLinesFromBOM := ReplaceLinesFromBOM(AssemblyHeader, xAssemblyHeader);
         IF AssemblyHeader.CalcBasedOnBuildQty(AssemblyHeader) THEN //OK32R
             IF (AssemblyHeader."Item No." <> xAssemblyHeader."Item No.") AND (xAssemblyHeader."Item No." <> '') AND (AssemblyHeader.Quantity > 0) THEN BEGIN
-                AssemblyLineMgt.UpdateAssemblyLines_BQ(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CurrentFieldNum, CurrentFieldNum);//BQ: Build Quantity
+                AssemblyLineMgt.UpdateAssemblyLines_BQ(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CallingFieldNo, CurrentFieldNum);//BQ: Build Quantity
                 IsHandled := true;
             END ELSE begin
-                AssemblyLineMgt.UpdateAssemblyLines_BQ(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CurrentFieldNum, CurrentFieldNum);//BQ: Build Quantity
+                AssemblyLineMgt.UpdateAssemblyLines_BQ(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CallingFieldNo, CurrentFieldNum);//BQ: Build Quantity
                 IsHandled := true;
             end
         ELSE
             IF AssemblyHeader.CalcBasedOnBuildQty2(AssemblyHeader) THEN  //OK32X
                 IF (AssemblyHeader."Item No." <> xAssemblyHeader."Item No.") AND (xAssemblyHeader."Item No." <> '') AND (AssemblyHeader.Quantity > 0) THEN begin
-                    AssemblyLineMgt.UpdateAssemblyLines_BQ2(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CurrentFieldNum, CurrentFieldNum);//BQ: Build Quantity
+                    AssemblyLineMgt.UpdateAssemblyLines_BQ2(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CallingFieldNo, CurrentFieldNum);//BQ: Build Quantity
+                    IsHandled := true;
                 end ELSE begin
-                    AssemblyLineMgt.UpdateAssemblyLines_BQ2(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CurrentFieldNum, CurrentFieldNum);//BQ: Build Quantity
+                    AssemblyLineMgt.UpdateAssemblyLines_BQ2(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CallingFieldNo, CurrentFieldNum);//BQ: Build Quantity
                     IsHandled := true;
                 end
             ELSE
                 IF AssemblyHeader.CalcBasedOnBuildQty_OK32LT(AssemblyHeader) THEN //OK32LT    FH20161028
                     IF (AssemblyHeader."Item No." <> xAssemblyHeader."Item No.") AND (xAssemblyHeader."Item No." <> '') AND (AssemblyHeader.Quantity > 0) THEN begin
-                        AssemblyLineMgt.UpdateAssemblyLines_BQ_OK32LT(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CurrentFieldNum, CurrentFieldNum);//BQ: Build Quantity
+                        AssemblyLineMgt.UpdateAssemblyLines_BQ_OK32LT(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CallingFieldNo, CurrentFieldNum);//BQ: Build Quantity
                         IsHandled := true;
                     end ELSE begin
-                        AssemblyLineMgt.UpdateAssemblyLines_BQ_OK32LT(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CurrentFieldNum, CurrentFieldNum);//BQ: Build Quantity
+                        AssemblyLineMgt.UpdateAssemblyLines_BQ_OK32LT(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CallingFieldNo, CurrentFieldNum);//BQ: Build Quantity
                         IsHandled := true;
                     end
                 ELSE
                     //ID2173 - Start
-                    IF AssemblyHeader.CalcBasedOnBuildQty_OK32UV(AssemblyHeader) THEN
+                    IF AssemblyHeader.CalcBasedOnBuildQty_OK32UV(AssemblyHeader) THEN //OK32UV
                         IF (AssemblyHeader."Item No." <> xAssemblyHeader."Item No.") AND (xAssemblyHeader."Item No." <> '') AND (AssemblyHeader.Quantity > 0) THEN begin
-                            AssemblyLineMgt.UpdateAssemblyLines_OK32UV(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CurrentFieldNum, CurrentFieldNum);
+                            AssemblyLineMgt.UpdateAssemblyLines_OK32UV(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CallingFieldNo, CurrentFieldNum);
                             IsHandled := true;
                         end ELSE begin
-                            AssemblyLineMgt.UpdateAssemblyLines_OK32UV(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CurrentFieldNum, CurrentFieldNum);
+                            AssemblyLineMgt.UpdateAssemblyLines_OK32UV(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CallingFieldNo, CurrentFieldNum);
                             IsHandled := true;
                         end
                     ELSE
-                        IF AssemblyHeader.CalcBasedOnBuildQty_OK32LED(AssemblyHeader) THEN
+                        IF AssemblyHeader.CalcBasedOnBuildQty_OK32LED(AssemblyHeader) THEN //OK32LED
                             IF (AssemblyHeader."Item No." <> xAssemblyHeader."Item No.") AND (xAssemblyHeader."Item No." <> '') AND (AssemblyHeader.Quantity > 0) THEN begin
-                                AssemblyLineMgt.UpdateAssemblyLines_OK32LED(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CurrentFieldNum, CurrentFieldNum);
+                                AssemblyLineMgt.UpdateAssemblyLines_OK32LED(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), TRUE, CallingFieldNo, CurrentFieldNum);
                                 IsHandled := true;
                             end ELSE begin
-                                AssemblyLineMgt.UpdateAssemblyLines_OK32LED(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CurrentFieldNum, CurrentFieldNum);
+                                AssemblyLineMgt.UpdateAssemblyLines_OK32LED(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CallingFieldNo, CurrentFieldNum);
                                 IsHandled := true;
                             end
-                        ELSE
+                        ELSE begin
                             //ID2173 - End
                             //FH20160929--<
-                            IsHandled := false;
+                            AssemblyLineMgt.UpdateAssemblyLines(AssemblyHeader, xAssemblyHeader, AssemblyHeader.FIELDNO(Quantity), blnReplLinesFromBOM, CallingFieldNo, CurrentFieldNum);
+                            IsHandled := True;
+                        end;
+
         //nj20221215 - Start
         if IsHandled then
             AssemblyHeaderReserve.VerifyQuantity(AssemblyHeader, xAssemblyHeader);
         //nj20221215 - End
+
+        // FH20160922-->
+        COMMIT;
+        InitQtyToAssemble_New(AssemblyHeader);
+        AssemblyHeader.VALIDATE(AssemblyHeader."Quantity to Assemble");
+        // FH20160922--<
     end;
 
+    local procedure ReplaceLinesFromBOM(AssemblyHeader: Record "Assembly Header"; var xAssemblyHeader: Record "Assembly Header"): Boolean
+    var
+        NoLinesWerePresent: Boolean;
+        LinesPresent: Boolean;
+        DeleteLines: Boolean;
+    begin
+        NoLinesWerePresent := (xAssemblyHeader.Quantity * xAssemblyHeader."Qty. per Unit of Measure" = 0);
+        LinesPresent := (AssemblyHeader.Quantity * AssemblyHeader."Qty. per Unit of Measure" <> 0);
+        DeleteLines := (AssemblyHeader.Quantity = 0);
+        EXIT((NoLinesWerePresent AND LinesPresent) OR DeleteLines);
+    end;
+
+    local procedure InitQtyToAssemble_New(var AssemblyHeader: record "Assembly Header")
+    var
+        ATOLink: Record "Assemble-to-Order Link";
+    begin
+        AssemblyHeader."Quantity to Assemble" := 0;//"Remaining Quantity";
+        AssemblyHeader."Quantity to Assemble (Base)" := 0;//"Remaining Quantity (Base)";
+        ATOLink.InitQtyToAsm(AssemblyHeader, AssemblyHeader."Quantity to Assemble", AssemblyHeader."Quantity to Assemble (Base)");
+    end;
     #endregion
 
     #region Table 5741 - Transfer Line
@@ -398,16 +575,14 @@ codeunit 50000 "Event Subscriber"
     end;
     #endregion
 
-    local procedure ReplaceLinesFromBOM(AssemblyHeader: Record "Assembly Header"; var xAssemblyHeader: Record "Assembly Header"): Boolean
+    #region Report 790 - Calculate Inventory
+    [EventSubscriber(ObjectType::Report, Report::"Calculate Inventory", 'OnInsertItemJnlLineOnAfterValidateLocationCode', '', false, false)]
+    local procedure OnInsertItemJnlLineOnAfterValidateLocationCode(ItemNo: Code[20]; VariantCode2: Code[10]; DimEntryNo2: Integer; BinCode2: Code[20]; Quantity2: Decimal; PhysInvQuantity: Decimal; var ItemJournalLine: Record "Item Journal Line")
     var
-        NoLinesWerePresent: Boolean;
-        LinesPresent: Boolean;
-        DeleteLines: Boolean;
+        lrecItem: Record Item;
     begin
-        NoLinesWerePresent := (xAssemblyHeader.Quantity * xAssemblyHeader."Qty. per Unit of Measure" = 0);
-        LinesPresent := (AssemblyHeader.Quantity * AssemblyHeader."Qty. per Unit of Measure" <> 0);
-        DeleteLines := (AssemblyHeader.Quantity = 0);
-        EXIT((NoLinesWerePresent AND LinesPresent) OR DeleteLines);
+        IF lrecItem.GET(ItemNo) THEN
+            ItemJournalLine."Shelf No." := lrecItem."Shelf No.";
     end;
-
+    #endregion
 }
