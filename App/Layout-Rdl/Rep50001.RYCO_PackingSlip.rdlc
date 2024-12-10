@@ -7,7 +7,7 @@
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
-      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>379984c7-5742-4d1b-b53b-e88d47043dff</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <ReportSections>
@@ -2102,7 +2102,7 @@ CStr(SUM(Fields!TempSalesLineLineAmtTaxAmtInvDiscAmt.Value)) + Chr(177)+
               <Source>Database</Source>
               <Value>=Convert.FromBase64String(Convert.ToBase64String(Fields!CompanyInfoPicture.Value))</Value>
               <MIMEType>image/bmp</MIMEType>
-              <Top>0.36778in</Top>
+              <Top>0.3539in</Top>
               <Left>0.08929cm</Left>
               <Height>36.1pt</Height>
               <Width>2.09304in</Width>
@@ -3675,7 +3675,7 @@ CStr(SUM(Fields!TempSalesLineLineAmtTaxAmtInvDiscAmt.Value)) + Chr(177)+
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="Date "&amp; Left(cstr(Globals!ExecutionTime),10)</Value>
+                      <Value>="Date "&amp;Left(cstr(Globals.ExecutionTime),10)</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -3779,7 +3779,7 @@ CStr(SUM(Fields!TempSalesLineLineAmtTaxAmtInvDiscAmt.Value)) + Chr(177)+
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="Time "&amp; Mid(cstr(Globals!ExecutionTime),11)</Value>
+                      <Value>="Time "&amp;Mid(cstr(Globals.ExecutionTime),11)</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -4375,6 +4375,7 @@ End Function
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>009f6ae5-8a99-47e5-b6b2-c8fa1d6c369b</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>

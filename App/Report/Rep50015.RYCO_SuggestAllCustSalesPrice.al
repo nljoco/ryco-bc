@@ -9,7 +9,7 @@ report 50015 "Suggest All Cust Sales Price"
     {
         dataitem(Item; Item)
         {
-            DataItemTableView = SORTING ("No.") WHERE (Blocked = FILTER (false), "Price Unit of Measure Code" = FILTER (<> ''));
+            DataItemTableView = SORTING("No.") WHERE(Blocked = FILTER(false), "Price Unit of Measure Code" = FILTER(<> ''));
             RequestFilterFields = "No.", "Item Category Code";
 
             trigger OnAfterGetRecord()
@@ -18,6 +18,7 @@ report 50015 "Suggest All Cust Sales Price"
                 grecSalesPriceWksht.SetRange("Item No.", "No.");
                 grecSalesPriceWksht.SetRange("Sales Type", grecSalesPriceWksht."Sales Type"::"All Customers");
                 grecSalesPriceWksht.SetRange("Starting Date", gdteStarting);
+                grecSalesPriceWksht.SetRange("Ending Date", gdteEnding);
                 if not grecSalesPriceWksht.FindFirst then begin
                     grecSalesPriceWksht.Init;
                     grecSalesPriceWksht.Validate("Item No.", "No.");
@@ -63,10 +64,12 @@ report 50015 "Suggest All Cust Sales Price"
                 field(gdteStarting; gdteStarting)
                 {
                     Caption = 'Starting Date';
+                    ApplicationArea = All;
                 }
                 field(gdteEnding; gdteEnding)
                 {
                     Caption = 'Ending Date';
+                    ApplicationArea = All;
                 }
             }
         }

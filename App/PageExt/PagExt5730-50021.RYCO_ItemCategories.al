@@ -24,8 +24,9 @@ SMK2018.04.09 SLUPG:
             {
                 ApplicationArea = All;
             }
-            field("Labour$"; Rec."Labour$")
+            field("Labour Amount"; Rec."Labour$")
             {
+                Caption = 'Labour Amount';
                 ApplicationArea = All;
             }
         }

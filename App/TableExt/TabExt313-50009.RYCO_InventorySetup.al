@@ -11,7 +11,6 @@ tableextension 50009 "RYCO Inventory Setup" extends "Inventory Setup"
     */
     fields
     {
-        // Add changes to table fields here
         field(50000; "Low Stock Notif. Email"; Text[80])
         {
             //ID623

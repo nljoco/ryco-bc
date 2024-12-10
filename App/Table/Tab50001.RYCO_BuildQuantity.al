@@ -41,7 +41,7 @@ table 50001 "Build Quantity"
 
     keys
     {
-        key(Key1; "Build Conversion")
+        key(Key1; "Build Conversion", "Number of Cans")
         {
             Clustered = true;
         }

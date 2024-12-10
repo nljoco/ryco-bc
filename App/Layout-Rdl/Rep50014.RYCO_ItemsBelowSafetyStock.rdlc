@@ -7,7 +7,7 @@
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
-      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>571dce38-ae83-40cb-8f5e-ba04e341d568</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <ReportSections>
@@ -404,6 +404,7 @@
                       <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <FontSize>7pt</FontSize>
+                        <Format>M/d/yyyy h:mm tt</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -413,9 +414,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>4.94792in</Left>
+              <Top>0in</Top>
+              <Left>5.10069in</Left>
               <Height>11pt</Height>
-              <Width>1.08333in</Width>
+              <Width>0.93056in</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -502,7 +504,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Left>3.82292in</Left>
+              <Top>0in</Top>
+              <Left>3.94792in</Left>
               <Height>11pt</Height>
               <Width>1.08333in</Width>
               <ZIndex>5</ZIndex>
@@ -591,6 +594,7 @@ End Function
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>5b2d69a4-82a1-44b8-9e12-f2a01b462caa</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>

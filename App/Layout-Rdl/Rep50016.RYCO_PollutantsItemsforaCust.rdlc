@@ -7,7 +7,6 @@
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
-      <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>8e1f5f74-24e6-4d49-8026-12c81c4ab5ac</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -59,7 +58,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ItemNoCaption.Value</Value>
+                                  <Value>=Fields!ItemNoCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -94,7 +93,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!DescriptionCaption.Value</Value>
+                                  <Value>=Fields!DescriptionCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -129,7 +128,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -161,7 +160,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ContainersCaption.Value</Value>
+                                  <Value>=Fields!ContainersCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -196,7 +195,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!BuildCaption.Value</Value>
+                                  <Value>=Fields!BuildCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -230,7 +229,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!POLPctCaption.Value</Value>
+                                  <Value>=Fields!POLPctCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -265,7 +264,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!KgofPOLCaption.Value</Value>
+                                  <Value>=Fields!KgofPOLCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -305,7 +304,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -337,7 +336,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!UnitCaption.Value</Value>
+                                  <Value>=Fields!UnitCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -370,7 +369,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -402,7 +401,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -434,7 +433,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -466,7 +465,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!SoldCaption.Value</Value>
+                                  <Value>=Fields!SoldCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -501,7 +500,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ConvCaption.Value</Value>
+                                  <Value>=Fields!ConvCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -535,7 +534,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -567,7 +566,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -604,7 +603,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CustomerCaption.Value</Value>
+                                  <Value>=Fields!CustomerCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -641,7 +640,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!No_Customer.Value</Value>
+                                  <Value>=Fields!No_Customer.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -676,7 +675,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Name_Customer.Value</Value>
+                                  <Value>=Fields!Name_Customer.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -713,7 +712,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -746,7 +745,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -780,7 +779,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -810,7 +809,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -845,7 +844,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!No_TempItem.Value</Value>
+                                  <Value>=Fields!No_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -876,7 +875,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Description_TempItem.Value</Value>
+                                  <Value>=Fields!Description_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -907,7 +906,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -940,7 +939,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Qty_TempItem.Value</Value>
+                                  <Value>=Fields!Qty_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -972,7 +971,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!QtyPerUOM_ItemUOM.Value</Value>
+                                  <Value>=Fields!QtyPerUOM_ItemUOM.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1005,7 +1004,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1038,7 +1037,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1076,7 +1075,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1105,7 +1104,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!BaseUOM_TempItem.Value</Value>
+                                  <Value>=Fields!BaseUOM_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1136,7 +1135,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1167,7 +1166,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1200,7 +1199,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1232,7 +1231,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!VOCCaption.Value</Value>
+                                  <Value>=Fields!VOCCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1265,7 +1264,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!VOC_TempItem.Value</Value>
+                                  <Value>=Fields!VOC_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -1299,7 +1298,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!VOC.Value</Value>
+                                  <Value>=Fields!VOC.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -1338,7 +1337,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1370,7 +1369,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1402,7 +1401,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1434,7 +1433,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1466,7 +1465,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1498,7 +1497,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1530,7 +1529,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CobaltCaption.Value</Value>
+                                  <Value>=Fields!CobaltCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1563,7 +1562,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Cobalt_TempItem.Value</Value>
+                                  <Value>=Fields!Cobalt_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -1597,7 +1596,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Cobalt.Value</Value>
+                                  <Value>=Fields!Cobalt.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -1636,7 +1635,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1668,7 +1667,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1700,7 +1699,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1732,7 +1731,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1764,7 +1763,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1796,7 +1795,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1828,7 +1827,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ManganCaption.Value</Value>
+                                  <Value>=Fields!ManganCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1861,7 +1860,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Manganese_TempItem.Value</Value>
+                                  <Value>=Fields!Manganese_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -1895,7 +1894,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Manganese.Value</Value>
+                                  <Value>=Fields!Manganese.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -1934,7 +1933,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1966,7 +1965,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -1998,7 +1997,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2030,7 +2029,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2062,7 +2061,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2094,7 +2093,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2126,7 +2125,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CopperCaption.Value</Value>
+                                  <Value>=Fields!CopperCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2159,7 +2158,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Copper_TempItem.Value</Value>
+                                  <Value>=Fields!Copper_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -2193,7 +2192,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Copper.Value</Value>
+                                  <Value>=Fields!Copper.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -2232,7 +2231,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2264,7 +2263,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2296,7 +2295,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2328,7 +2327,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2360,7 +2359,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2392,7 +2391,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2424,7 +2423,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!MolybdCaption.Value</Value>
+                                  <Value>=Fields!MolybdCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2457,7 +2456,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Molybdenum_TempItem.Value</Value>
+                                  <Value>=Fields!Molybdenum_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -2491,7 +2490,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Molybdenum.Value</Value>
+                                  <Value>=Fields!Molybdenum.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -2530,7 +2529,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2562,7 +2561,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2594,7 +2593,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2626,7 +2625,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2658,7 +2657,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2690,7 +2689,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2722,7 +2721,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ZincCaption.Value</Value>
+                                  <Value>=Fields!ZincCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2755,7 +2754,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Zinc_TempItem.Value</Value>
+                                  <Value>=Fields!Zinc_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -2789,7 +2788,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Zinc.Value</Value>
+                                  <Value>=Fields!Zinc.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -2828,7 +2827,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2860,7 +2859,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2892,7 +2891,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2924,7 +2923,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2956,7 +2955,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -2988,7 +2987,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3020,7 +3019,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!MetylCaption.Value</Value>
+                                  <Value>=Fields!MetylCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3053,7 +3052,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Methylene_TempItem.Value</Value>
+                                  <Value>=Fields!Methylene_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -3087,7 +3086,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Methylene.Value</Value>
+                                  <Value>=Fields!Methylene.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -3126,7 +3125,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3158,7 +3157,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3190,7 +3189,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3222,7 +3221,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3254,7 +3253,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3286,7 +3285,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3318,7 +3317,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ToluenCaption.Value</Value>
+                                  <Value>=Fields!ToluenCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3351,7 +3350,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Toluene_TempItem.Value</Value>
+                                  <Value>=Fields!Toluene_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -3385,7 +3384,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Toluene.Value</Value>
+                                  <Value>=Fields!Toluene.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -3424,7 +3423,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3456,7 +3455,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3488,7 +3487,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3520,7 +3519,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3552,7 +3551,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3584,7 +3583,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3616,7 +3615,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!XyleneCaption.Value</Value>
+                                  <Value>=Fields!XyleneCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3649,7 +3648,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Xylene_TempItem.Value</Value>
+                                  <Value>=Fields!Xylene_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -3683,7 +3682,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Xylene.Value</Value>
+                                  <Value>=Fields!Xylene.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -3722,7 +3721,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3754,7 +3753,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3786,7 +3785,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3818,7 +3817,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3850,7 +3849,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3882,7 +3881,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3914,7 +3913,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CAS5160021Caption.Value</Value>
+                                  <Value>=Fields!CAS5160021Caption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -3936,7 +3935,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -3948,7 +3946,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CAS5160021_TempItem.Value</Value>
+                                  <Value>=Fields!CAS5160021_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -3982,7 +3980,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CAS5160021.Value</Value>
+                                  <Value>=Fields!CAS5160021.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -4021,7 +4019,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4053,7 +4051,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4085,7 +4083,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4117,7 +4115,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4149,7 +4147,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4181,7 +4179,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4213,7 +4211,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!OtherCaption.Value</Value>
+                                  <Value>=Fields!OtherCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4246,7 +4244,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Other_TempItem.Value</Value>
+                                  <Value>=Fields!Other_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -4280,7 +4278,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Other.Value</Value>
+                                  <Value>=Fields!Other.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -4319,7 +4317,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4351,7 +4349,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4383,7 +4381,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4415,7 +4413,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4447,7 +4445,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4479,7 +4477,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4511,7 +4509,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4543,7 +4541,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4575,7 +4573,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4612,7 +4610,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4641,7 +4639,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CustomerCaption.Value</Value>
+                                  <Value>=Fields!CustomerCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4675,7 +4673,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!No_Customer.Value</Value>
+                                  <Value>=Fields!No_Customer.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4709,7 +4707,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CustTotalsCaption.Value</Value>
+                                  <Value>=Fields!CustTotalsCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4743,7 +4741,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4777,7 +4775,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -4811,7 +4809,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4844,7 +4842,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4877,7 +4875,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4915,7 +4913,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4947,7 +4945,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -4979,7 +4977,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5011,7 +5009,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5043,7 +5041,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5075,7 +5073,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5107,7 +5105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!VOCCaption.Value</Value>
+                                  <Value>=Fields!VOCCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5140,7 +5138,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!VOC_TempItem.Value</Value>
+                                  <Value>=Fields!VOC_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -5174,7 +5172,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!VOC.Value)</Value>
+                                  <Value>=Sum(Fields!VOC.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -5213,7 +5211,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5245,7 +5243,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5277,7 +5275,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5309,7 +5307,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5341,7 +5339,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5373,7 +5371,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5405,7 +5403,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CobaltCaption.Value</Value>
+                                  <Value>=Fields!CobaltCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5438,7 +5436,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Cobalt_TempItem.Value</Value>
+                                  <Value>=Fields!Cobalt_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -5472,7 +5470,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Cobalt.Value)</Value>
+                                  <Value>=Sum(Fields!Cobalt.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -5511,7 +5509,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5543,7 +5541,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5575,7 +5573,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5607,7 +5605,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5639,7 +5637,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5671,7 +5669,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5703,7 +5701,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ManganCaption.Value</Value>
+                                  <Value>=Fields!ManganCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5736,7 +5734,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Manganese_TempItem.Value</Value>
+                                  <Value>=Fields!Manganese_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -5770,7 +5768,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Manganese.Value)</Value>
+                                  <Value>=Sum(Fields!Manganese.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -5809,7 +5807,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5841,7 +5839,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5873,7 +5871,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5905,7 +5903,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5937,7 +5935,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -5969,7 +5967,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6001,7 +5999,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CopperCaption.Value</Value>
+                                  <Value>=Fields!CopperCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6034,7 +6032,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Copper_TempItem.Value</Value>
+                                  <Value>=Fields!Copper_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -6068,7 +6066,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Copper.Value)</Value>
+                                  <Value>=Sum(Fields!Copper.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -6107,7 +6105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6139,7 +6137,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6171,7 +6169,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6203,7 +6201,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6235,7 +6233,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6267,7 +6265,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6299,7 +6297,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!MolybdCaption.Value</Value>
+                                  <Value>=Fields!MolybdCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6332,7 +6330,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Molybdenum_TempItem.Value</Value>
+                                  <Value>=Fields!Molybdenum_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -6366,7 +6364,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Molybdenum.Value)</Value>
+                                  <Value>=Sum(Fields!Molybdenum.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -6405,7 +6403,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6437,7 +6435,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6469,7 +6467,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6501,7 +6499,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6533,7 +6531,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6565,7 +6563,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6597,7 +6595,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ZincCaption.Value</Value>
+                                  <Value>=Fields!ZincCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6630,7 +6628,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Zinc_TempItem.Value</Value>
+                                  <Value>=Fields!Zinc_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -6664,7 +6662,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Zinc.Value)</Value>
+                                  <Value>=Sum(Fields!Zinc.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -6703,7 +6701,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6735,7 +6733,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6767,7 +6765,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6799,7 +6797,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6831,7 +6829,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6863,7 +6861,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6895,7 +6893,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!MetylCaption.Value</Value>
+                                  <Value>=Fields!MetylCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -6928,7 +6926,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Methylene_TempItem.Value</Value>
+                                  <Value>=Fields!Methylene_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -6962,7 +6960,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Methylene.Value)</Value>
+                                  <Value>=Sum(Fields!Methylene.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -7001,7 +6999,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7033,7 +7031,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7065,7 +7063,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7097,7 +7095,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7129,7 +7127,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7161,7 +7159,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7193,7 +7191,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!ToluenCaption.Value</Value>
+                                  <Value>=Fields!ToluenCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7226,7 +7224,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Toluene_TempItem.Value</Value>
+                                  <Value>=Fields!Toluene_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -7260,7 +7258,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Toluene.Value)</Value>
+                                  <Value>=Sum(Fields!Toluene.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -7299,7 +7297,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7331,7 +7329,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7363,7 +7361,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7395,7 +7393,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7427,7 +7425,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7459,7 +7457,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7491,7 +7489,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!XyleneCaption.Value</Value>
+                                  <Value>=Fields!XyleneCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7524,7 +7522,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Xylene_TempItem.Value</Value>
+                                  <Value>=Fields!Xylene_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -7558,7 +7556,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Xylene.Value)</Value>
+                                  <Value>=Sum(Fields!Xylene.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -7597,7 +7595,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7629,7 +7627,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7661,7 +7659,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7693,7 +7691,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7725,7 +7723,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7757,7 +7755,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7789,7 +7787,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CAS5160021Caption.Value</Value>
+                                  <Value>=Fields!CAS5160021Caption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7822,7 +7820,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!CAS5160021_TempItem.Value</Value>
+                                  <Value>=Fields!CAS5160021_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -7856,7 +7854,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!CAS5160021.Value)</Value>
+                                  <Value>=Sum(Fields!CAS5160021.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -7895,7 +7893,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7927,7 +7925,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7959,7 +7957,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -7991,7 +7989,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -8023,7 +8021,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -8055,7 +8053,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -8087,7 +8085,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!OtherCaption.Value</Value>
+                                  <Value>=Fields!OtherCaption.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                   </Style>
@@ -8120,7 +8118,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Fields!Other_TempItem.Value</Value>
+                                  <Value>=Fields!Other_TempItem.Value</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.00000;(#,0.00000)</Format>
@@ -8154,7 +8152,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto">=Sum(Fields!Other.Value)</Value>
+                                  <Value>=Sum(Fields!Other.Value)</Value>
                                   <Style>
                                     <FontSize>9pt</FontSize>
                                     <Format>#,0.0000;(#,0.0000)</Format>
@@ -8193,7 +8191,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8227,7 +8225,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8261,7 +8259,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8293,7 +8291,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8325,7 +8323,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8357,7 +8355,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8389,7 +8387,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value EvaluationMode="Auto" />
+                                  <Value />
                                   <Style>
                                     <FontSize>7pt</FontSize>
                                   </Style>
@@ -8555,7 +8553,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=First(Fields!RepTitleCaption.Value,"DataSet_Result")</Value>
+                      <Value>=First(Fields!RepTitleCaption.Value,"DataSet_Result")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -8581,7 +8579,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=First(Fields!Name_Company.Value,"DataSet_Result")</Value>
+                      <Value>=First(Fields!Name_Company.Value,"DataSet_Result")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8608,7 +8606,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=Globals!ExecutionTime</Value>
+                      <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8637,7 +8635,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=First(Fields!DateCaption.Value,"DataSet_Result")</Value>
+                      <Value>=First(Fields!DateCaption.Value,"DataSet_Result")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8664,7 +8662,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=Globals!PageNumber</Value>
+                      <Value>=Globals!PageNumber</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8694,7 +8692,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=First(Fields!PageCaption.Value,"DataSet_Result")</Value>
+                      <Value>=First(Fields!PageCaption.Value,"DataSet_Result")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8722,7 +8720,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=User!UserID</Value>
+                      <Value>=User!UserID</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8752,7 +8750,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=First(Fields!RepFilters.Value,"DataSet_Result")</Value>
+                      <Value>=First(Fields!RepFilters.Value,"DataSet_Result")</Value>
                       <Style>
                         <FontSize>9pt</FontSize>
                       </Style>
@@ -8762,7 +8760,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.48611in</Top>
+              <Top>0.44in</Top>
               <Height>11pt</Height>
               <Width>7.52083in</Width>
               <ZIndex>7</ZIndex>

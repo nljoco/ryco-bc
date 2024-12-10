@@ -5,6 +5,8 @@ report 50021 "RYCO Customer/Item Statistics"
     RDLCLayout = './App/Layout-Rdl/Rep50021.RYCO_CustomerItemStatistics.rdlc';
 
     Caption = 'Ryc Customer/Item Statistics';
+    UsageCategory = ReportsAndAnalysis;
+    ApplicationArea = all;
 
     dataset
     {

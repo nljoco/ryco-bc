@@ -33,9 +33,8 @@ codeunit 50005 "SendEmailStream"
         Clear(EmailMessage);
         EmailMessage.Create(ToAddr, Subject, Body, true);
         EmailMessage.AddAttachment(AttachmentName, 'pdf', inStreamReport);
-
         EmailAccountUtil.GetAllAccounts(true, EmailAccount);
-        EmailAccount.SetFilter("Email Address", 'noreply@northerndocksystems.com');
+        EmailAccount.SetFilter("Email Address", 'admin@rycoline.ca');
 
         if (EmailAccount.FindFirst()) then begin
             //Send mail

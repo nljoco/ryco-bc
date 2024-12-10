@@ -1,12 +1,10 @@
-report 50013 "Cust./Item Sales bySalesperson"
+report 50026 "RYCO Cust/Item StatbySalespers"
 {
-    // ID 460
-    // - Same report as Cust/Item Stat by Salesperson
-    // - remove two columns Contribution margin and Contrib ratio
     DefaultLayout = RDLC;
-    RDLCLayout = './App/Layout-Rdl/Rep50013.RYCO_CustItemSalesbySalesperson.rdlc';
-
-    Caption = 'Cust./Item Stat. by Salespers.';
+    RDLCLayout = './App/Layout-Rdl/Rep50026.RYCO_CustItemStatbySalespers.rdlc';
+    ApplicationArea = Suite;
+    Caption = 'Ryc Cust./Item Stat. by Salespers.';
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -23,9 +21,6 @@ report 50013 "Cust./Item Sales bySalesperson"
             {
             }
             column(CompanyInformation_Name; CompanyInformation.Name)
-            {
-            }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
             {
             }
             column(USERID; UserId)
@@ -238,9 +233,9 @@ report 50013 "Cust./Item Sales bySalesperson"
                     trigger OnAfterGetRecord()
                     begin
                         if ValueEntryTotalForItem."Item No." <> "Item No." then begin
-                            "CalculateProfit%";
+                            "CalculateProfit%"();
                             if PrintToExcel and (ValueEntryTotalForItem."Item No." <> '') then
-                                MakeExcelDataBody;
+                                MakeExcelDataBody();
                             Clear(ValueEntryTotalForItem);
                             ProfitTotalForItem := 0;
                             if not Item.Get("Item No.") then begin
@@ -262,8 +257,8 @@ report 50013 "Cust./Item Sales bySalesperson"
                     trigger OnPostDataItem()
                     begin
                         if PrintToExcel and (ValueEntryTotalForItem."Item No." <> '') then begin
-                            "CalculateProfit%";
-                            MakeExcelDataBody;
+                            "CalculateProfit%"();
+                            MakeExcelDataBody();
                         end;
                     end;
 
@@ -276,7 +271,6 @@ report 50013 "Cust./Item Sales bySalesperson"
                                 SetRange("Salespers./Purch. Code", "Salesperson/Purchaser".Code);
                         end;
 
-                        CurrReport.CreateTotals("Invoiced Quantity", "Sales Amount (Actual)", Profit, "Discount Amount");
                         Clear(ValueEntryTotalForItem);
                         ProfitTotalForItem := 0;
                     end;
@@ -296,29 +290,20 @@ report 50013 "Cust./Item Sales bySalesperson"
                                 SetRange("Salesperson Code");
                             end;
                     end;
-
-                    CurrReport.CreateTotals("Value Entry"."Sales Amount (Actual)", Profit, "Value Entry"."Discount Amount");
                 end;
             }
 
             trigger OnAfterGetRecord()
             begin
-                CurrReport.NewPagePerRecord := OnlyOnePerPage;
-
                 if OnlyOnePerPage then
                     PageGroupNo := PageGroupNo + 1
-            end;
-
-            trigger OnPreDataItem()
-            begin
-                CurrReport.CreateTotals("Value Entry"."Sales Amount (Actual)", Profit, "Value Entry"."Discount Amount");
             end;
         }
     }
 
     requestpage
     {
-        SaveValues = false;
+        SaveValues = true;
 
         layout
         {
@@ -329,19 +314,22 @@ report 50013 "Cust./Item Sales bySalesperson"
                     Caption = 'Options';
                     field(SalespersonToUse; SalespersonToUse)
                     {
+                        ApplicationArea = Suite;
                         Caption = 'Salesperson To Use';
                         OptionCaption = 'Assigned To Customer,Assigned To Sales Order';
-                        ApplicationArea = All;
+                        ToolTip = 'Specifies if the report must be based on the salesperson that is assigned to the customer or to the sales order.';
                     }
                     field(OnlyOnePerPage; OnlyOnePerPage)
                     {
+                        ApplicationArea = Suite;
                         Caption = 'New Page per Salesperson';
-                        ApplicationArea = All;
+                        ToolTip = 'Specifies if each salesperson''s statistics begins on a new page.';
                     }
                     field(PrintToExcel; PrintToExcel)
                     {
+                        ApplicationArea = Suite;
                         Caption = 'Print to Excel';
-                        ApplicationArea = All;
+                        ToolTip = 'Specifies if you want to export the data to an Excel spreadsheet for additional analysis or formatting before printing.';
                     }
                 }
             }
@@ -359,15 +347,15 @@ report 50013 "Cust./Item Sales bySalesperson"
     trigger OnPostReport()
     begin
         if PrintToExcel then
-            CreateExcelbook;
+            CreateExcelbook();
     end;
 
     trigger OnPreReport()
     begin
-        CompanyInformation.Get;
-        FilterString := "Salesperson/Purchaser".GetFilters;
-        FilterString2 := Customer.GetFilters;
-        FilterString3 := "Value Entry".GetFilters;
+        CompanyInformation.Get();
+        FilterString := "Salesperson/Purchaser".GetFilters();
+        FilterString2 := Customer.GetFilters();
+        FilterString3 := "Value Entry".GetFilters();
         case SalespersonToUse of
             SalespersonToUse::"Assigned To Customer":
                 SalespersonString := Text002;
@@ -378,7 +366,7 @@ report 50013 "Cust./Item Sales bySalesperson"
         end;
 
         if PrintToExcel then
-            MakeExcelInfo;
+            MakeExcelInfo();
     end;
 
     var
@@ -398,7 +386,7 @@ report 50013 "Cust./Item Sales bySalesperson"
         Text003: Label 'Individual sale shows under the Salesperson assigned to that individual Sales Order.';
         PrintToExcel: Boolean;
         Text101: Label 'Data';
-        Text102: Label 'Customer/Item Sales by Salesperson';
+        Text102: Label 'Customer/Item Statistics by Salesperson';
         Text103: Label 'Company Name';
         Text104: Label 'Report No.';
         Text105: Label 'Report Name';
@@ -434,8 +422,7 @@ report 50013 "Cust./Item Sales bySalesperson"
         Salesperson_TotalsCaptionLbl: Label 'Salesperson Totals';
         Customer_TotalsCaptionLbl: Label 'Customer Totals';
 
-    //[Scope('Internal')]
-    local procedure "CalculateProfit%"()
+    procedure "CalculateProfit%"()
     begin
         if ValueEntryTotalForItem."Sales Amount (Actual)" <> 0 then
             "Profit%" := Round(100 * ProfitTotalForItem / ValueEntryTotalForItem."Sales Amount (Actual)", 0.1)
@@ -445,91 +432,41 @@ report 50013 "Cust./Item Sales bySalesperson"
 
     local procedure MakeExcelInfo()
     begin
-
-        ExcelBuf.SetUseInfoSheet;
-
-        //////////////////////////////////////////////////////////////////////////////
-        //begin rem smk2018.04.18 slupg:
-        //------------------------------
-        //seems sometime after NAV2016 CU3, Microsoft removed the third parameter in
-        //ExcelBuf.AddInfoColumn which used to be CommentText@1004 : Text[1000].
-        //removed in NAV2018?
-        //////////////////////////////////////////////////////////////////////////////
-        /*
-        ExcelBuf.AddInfoColumn(FORMAT(Text103),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(CompanyInformation.Name,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text105),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(FORMAT(Text102),FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text104),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(REPORT::"Cust./Item Stat. by Salespers.",FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Number);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text106),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(USERID,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text107),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(TODAY,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Date);
-        ExcelBuf.AddInfoColumn(TIME,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Time);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text111),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(SalespersonString,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text108),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(FilterString,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text109),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(FilterString2,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
-        ExcelBuf.AddInfoColumn(FORMAT(Text110),FALSE,'',TRUE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddInfoColumn(FilterString3,FALSE,'',FALSE,FALSE,FALSE,'',ExcelBuf."Cell Type"::Text);
-        */
-        //////////////////////////////////////////////////////////////////////////////
-        //end rem smk2018.04.18 slupg
-        //////////////////////////////////////////////////////////////////////////////
-
-        //////////////////////////////////////////////////////////////////////////////
-        //begin add smk2018.04.18 slupg (replaced the above code
-        //////////////////////////////////////////////////////////////////////////////
+        ExcelBuf.SetUseInfoSheet();
         ExcelBuf.AddInfoColumn(Format(Text103), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(CompanyInformation.Name, false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text105), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(Format(Text102), false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text104), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(REPORT::"Cust./Item Stat. by Salespers.", false, false, false, false, '', ExcelBuf."Cell Type"::Number);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text106), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(UserId, false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text107), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(Today, false, false, false, false, '', ExcelBuf."Cell Type"::Date);
         ExcelBuf.AddInfoColumn(Time, false, false, false, false, '', ExcelBuf."Cell Type"::Time);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text111), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(SalespersonString, false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text108), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(FilterString, false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text109), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(FilterString2, false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddInfoColumn(Format(Text110), false, true, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddInfoColumn(FilterString3, false, false, false, false, '', ExcelBuf."Cell Type"::Text);
-        //////////////////////////////////////////////////////////////////////////////
-        //end add smk2018.04.18 slupg
-        //////////////////////////////////////////////////////////////////////////////
-
-        ExcelBuf.ClearNewRow;
-        MakeExcelDataHeader;
-
+        ExcelBuf.ClearNewRow();
+        MakeExcelDataHeader();
     end;
 
     local procedure MakeExcelDataHeader()
     begin
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddColumn(
           Text114 + ' ' + "Salesperson/Purchaser".FieldCaption(Code), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddColumn(
@@ -542,14 +479,14 @@ report 50013 "Cust./Item Sales bySalesperson"
         ExcelBuf.AddColumn("Value Entry".FieldCaption("Invoiced Quantity"), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddColumn(Item.FieldCaption("Base Unit of Measure"), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddColumn("Value Entry".FieldCaption("Sales Amount (Actual)"), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddColumn(Format(Text112), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddColumn(Format(Text113), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
-        ExcelBuf.AddColumn("Value Entry".FieldCaption("Discount Amount"), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddColumn(Format(Text112), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddColumn(Format(Text113), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
+        // ExcelBuf.AddColumn("Value Entry".FieldCaption("Discount Amount"), false, '', true, false, true, '', ExcelBuf."Cell Type"::Text);
     end;
 
     local procedure MakeExcelDataBody()
     begin
-        ExcelBuf.NewRow;
+        ExcelBuf.NewRow();
         ExcelBuf.AddColumn("Salesperson/Purchaser".Code, false, '', false, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddColumn("Salesperson/Purchaser".Name, false, '', false, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddColumn(Customer."No.", false, '', false, false, false, '', ExcelBuf."Cell Type"::Text);
@@ -560,21 +497,18 @@ report 50013 "Cust./Item Sales bySalesperson"
         ExcelBuf.AddColumn(Item."Base Unit of Measure", false, '', false, false, false, '', ExcelBuf."Cell Type"::Text);
         ExcelBuf.AddColumn(
           ValueEntryTotalForItem."Sales Amount (Actual)", false, '', false, false, false, '#,##0.00', ExcelBuf."Cell Type"::Number);
-        ExcelBuf.AddColumn(ProfitTotalForItem, false, '', false, false, false, '#,##0.00', ExcelBuf."Cell Type"::Number);
-        ExcelBuf.AddColumn("Profit%" / 100, false, '', false, false, false, '0.0%', ExcelBuf."Cell Type"::Number);
-        ExcelBuf.AddColumn(ValueEntryTotalForItem."Discount Amount", false, '', false, false, false, '#,##0.00', ExcelBuf."Cell Type"::Number);
+        //ExcelBuf.AddColumn(ProfitTotalForItem, false, '', false, false, false, '#,##0.00', ExcelBuf."Cell Type"::Number);
+        //ExcelBuf.AddColumn("Profit%" / 100, false, '', false, false, false, '0.0%', ExcelBuf."Cell Type"::Number);
+        //ExcelBuf.AddColumn(ValueEntryTotalForItem."Discount Amount", false, '', false, false, false, '#,##0.00', ExcelBuf."Cell Type"::Number);
     end;
 
     local procedure CreateExcelbook()
-    var
-        SheetName: Text[250];
     begin
-        SheetName := Text102;
-        ExcelBuf.CreateNewBook('Data');
-        ExcelBuf.WriteSheet(SheetName, CompanyName(), UserId());
+        //ExcelBuf.CreateBookAndOpenExcel('', Text101, Text102, CompanyName, UserId);
+        ExcelBuf.CreateNewBook(Text101);
+        ExcelBuf.WriteSheet(Text102, CompanyName, UserId);
         ExcelBuf.CloseBook();
         ExcelBuf.OpenExcel();
-        ExcelBuf.DeleteAll;
+        Error('');
     end;
 }
-

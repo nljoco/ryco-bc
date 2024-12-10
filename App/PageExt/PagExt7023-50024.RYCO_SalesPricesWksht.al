@@ -19,7 +19,7 @@ pageextension 50024 "Ryc Sales Price Wksht" extends "Sales Price Worksheet"
     */
     layout
     {
-        addafter("Allow Line Disc.")
+        addafter("current unit price")
         {
             field("Last Direct Cost"; Rec."Last Direct Cost")
             {
@@ -40,12 +40,32 @@ pageextension 50024 "Ryc Sales Price Wksht" extends "Sales Price Worksheet"
             {
                 ApplicationArea = All;
             }
+        }
+        addafter("Allow Line Disc.")
+        {
             field("Item Category Code"; Rec."Item Category Code")
             {
                 ApplicationArea = All;
                 Editable = false;
             }
         }
+
+        /*modify("Allow Invoice disc.")
+        {
+            visible = true;
+        }
+        modify("Price Includes VAT")
+        {
+            visible = true;
+        }
+        modify("VAT Bus. Posting Gr. (Price)")
+        {
+            Visible = true;
+        }
+        modify("Allow line disc.")
+        {
+            Visible = true;
+        }*/
     }
 
     actions

@@ -14,12 +14,30 @@ pageextension 50019 "Ryc Item Units of Measure" extends "Item Units of Measure"
                 ApplicationArea = All;
             }
         }
+
+        modify("Height")
+        {
+            Visible = false;
+        }
+        modify("Width")
+        {
+            Visible = false;
+        }
+        modify("Length")
+        {
+            Visible = false;
+        }
+        modify("Cubage")
+        {
+            Visible = false;
+        }
+        modify("Weight")
+        {
+            Visible = false;
+        }
     }
 
     actions
     {
     }
-
-    var
-
 }

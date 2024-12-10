@@ -12,7 +12,9 @@ report 50018 "YCO Phys. Inventory List"
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50018.RYCO_PhysInventoryList.rdlc';
 
-    Caption = 'Ryc Phys. Inventory List';
+    Caption = 'Phys. Inventory List';
+    ApplicationArea = all;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {

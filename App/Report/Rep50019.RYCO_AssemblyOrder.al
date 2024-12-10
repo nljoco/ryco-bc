@@ -8,8 +8,10 @@ report 50019 "RYCO Assembly Order"
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50019.RYCO_AssemblyOrder.rdlc';
 
-    Caption = 'Ryc Assembly Order';
+    Caption = 'Assembly Order';
     PreviewMode = PrintLayout;
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -153,6 +155,12 @@ report 50019 "RYCO Assembly Order"
                 gcodPrevAssemblyNo := '';
                 gcodLastAssemblyNo := '';
                 if grecItem.Get("Assembly Header"."Item No.") then begin
+                    //nj20241003 - Start
+                    if Confirm('1. No.: %1, Master Item No.: %2, Linked to Master Item No.": %3', true, grecItem."No.", grecItem."Master Item No.", grecItem."Linked to Master Item No.") then
+                        Error('1. Error!');
+                    if (grecItem."Master Item No." = false) and (grecItem."Linked to Master Item No." <> '') then
+                        grecItem.Get(grecItem."Linked to Master Item No.");
+                    //nj20241003 - End
                     case "Assembly Header"."Location Code" of
                         'CALGARY':
                             begin

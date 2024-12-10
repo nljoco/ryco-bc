@@ -181,8 +181,8 @@ codeunit 50004 "Ryco Sales Price Calc. Mgt."
                         ((BestSalesPrice."Currency Code" = '') OR (SalesPrice."Currency Code" <> '')) AND
                       ((BestSalesPrice."Variant Code" = '') OR (SalesPrice."Variant Code" <> '')):
                             IF (BestSalesPrice."Unit Price" = 0) OR
-                               (CalcLineAmount(BestSalesPrice) > CalcLineAmount(SalesPrice))
-                            THEN
+                                (CalcLineAmount(BestSalesPrice) > CalcLineAmount(SalesPrice))
+                             THEN
                                 BestSalesPrice := SalesPrice;
                     END;
                 END;

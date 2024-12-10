@@ -4,6 +4,8 @@ report 50014 "Items Below Safety Stock"
     //  - newish report
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50014.RYCO_ItemsBelowSafetyStock.rdlc';
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
 
     dataset

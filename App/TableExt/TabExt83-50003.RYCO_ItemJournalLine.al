@@ -13,7 +13,8 @@ tableextension 50003 "RYCO Item Journal Line" extends "Item Journal Line"
         field(50000; "Shelf No."; Code[10])
         {
             //FH20161116
-            CaptionML = ENU = 'Shelf No.', ESM = 'Nº estante', FRC = 'N° de tablette', ENC = 'Shelf No.';
+            Caption = 'Shelf No.';
+            //CaptionML = ENU = 'Shelf No.', ESM = 'Nº estante', FRC = 'N° de tablette', ENC = 'Shelf No.';
             DataClassification = ToBeClassified;
         }
     }

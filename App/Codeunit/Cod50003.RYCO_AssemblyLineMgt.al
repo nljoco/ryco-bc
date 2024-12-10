@@ -52,7 +52,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                 end;
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
             end;
         end
@@ -60,18 +60,18 @@ codeunit 50003 "Ryco Assembly Line Mgt."
             if AssemblyLine.Type <> AssemblyLine.Type::" " then
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         end;
         //Fazle05252016--<
 
         AssemblyLine.Validate(
           Quantity,
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           "Quantity to Consume",
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
             AssemblyLine."Resource Usage Type"));
         AssemblyLine.ValidateDueDate(AsmHeader, AsmHeader."Starting Date", ShowDueDateBeforeWorkDateMessage);
@@ -151,9 +151,8 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                         TempAssemblyLine.INIT;
                         TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                         TempAssemblyLine."Document No." := AsmHeader."No.";
-                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                         TempAssemblyLine.INSERT(TRUE);
-
                         AddBOMLine2_BQ(AsmHeader, TempAssemblyLine, true, BomComponent, false);
                     /*
                     // nj20160511 - Start
@@ -397,12 +396,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
 
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
                                     AssemblyLine."Resource Usage Type"));
 
@@ -433,12 +432,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                                 AssemblyLine.Validate("Quantity per", ldecQuantityper);
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
                             end;
                         end;
@@ -562,7 +561,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                         TempAssemblyLine.INIT;
                         TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                         TempAssemblyLine."Document No." := AsmHeader."No.";
-                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                         TempAssemblyLine.INSERT(TRUE);
 
                         AddBOMLine2_BQ2(AsmHeader, TempAssemblyLine, true, BomComponent, false);
@@ -728,7 +727,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                 end;
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
             end;
         end
@@ -736,18 +735,18 @@ codeunit 50003 "Ryco Assembly Line Mgt."
             if AssemblyLine.Type <> AssemblyLine.Type::" " then
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         end;
         //Fazle05252016--<
 
         AssemblyLine.Validate(
           Quantity,
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           "Quantity to Consume",
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
             AssemblyLine."Resource Usage Type"));
         AssemblyLine.ValidateDueDate(AsmHeader, AsmHeader."Starting Date", ShowDueDateBeforeWorkDateMessage);
@@ -843,12 +842,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
 
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
                                     AssemblyLine."Resource Usage Type"));
 
@@ -880,12 +879,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                                 AssemblyLine.Validate("Quantity per", ldecQuantityper);
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
                             end;
                         end;
@@ -993,7 +992,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                         TempAssemblyLine.INIT;
                         TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                         TempAssemblyLine."Document No." := AsmHeader."No.";
-                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                         TempAssemblyLine.INSERT(TRUE);
 
                         AddBOMLine2_BQ_OK32LT(AsmHeader, TempAssemblyLine, true, BomComponent, false);
@@ -1132,7 +1131,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                 end;
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
             end;
         end
@@ -1140,17 +1139,17 @@ codeunit 50003 "Ryco Assembly Line Mgt."
             if AssemblyLine.Type <> AssemblyLine.Type::" " then
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         end;
 
         AssemblyLine.Validate(
           Quantity,
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           "Quantity to Consume",
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
             AssemblyLine."Resource Usage Type"));
         AssemblyLine.ValidateDueDate(AsmHeader, AsmHeader."Starting Date", ShowDueDateBeforeWorkDateMessage);
@@ -1247,12 +1246,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
 
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
                                     AssemblyLine."Resource Usage Type"));
 
@@ -1282,12 +1281,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                                 AssemblyLine.Validate("Quantity per", ldecQuantityper);
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
                             end;
                         end;
@@ -1387,7 +1386,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                 end;
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
             end;
         end
@@ -1395,17 +1394,17 @@ codeunit 50003 "Ryco Assembly Line Mgt."
             if AssemblyLine.Type <> AssemblyLine.Type::" " then
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         end;
 
         AssemblyLine.Validate(
           Quantity,
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           "Quantity to Consume",
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
             AssemblyLine."Resource Usage Type"));
         AssemblyLine.ValidateDueDate(AsmHeader, AsmHeader."Starting Date", ShowDueDateBeforeWorkDateMessage);
@@ -1485,7 +1484,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                         TempAssemblyLine.INIT;
                         TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                         TempAssemblyLine."Document No." := AsmHeader."No.";
-                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                         TempAssemblyLine.INSERT(TRUE);
 
                         AddBOMLine2_OK32UV(AsmHeader, TempAssemblyLine, true, BomComponent, false);
@@ -1663,12 +1662,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
 
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
                                     AssemblyLine."Resource Usage Type"));
 
@@ -1799,7 +1798,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                 end;
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
             end;
         end
@@ -1807,17 +1806,17 @@ codeunit 50003 "Ryco Assembly Line Mgt."
             if AssemblyLine.Type <> AssemblyLine.Type::" " then
                 AssemblyLine.Validate(
                   "Quantity per",
-                  AssemblyLine.CalcQuantityFromBOM(
+                  AssemblyLine.CalcBOMQuantity(
                     BomComponent.Type, BomComponent."Quantity per", 1, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         end;
 
         AssemblyLine.Validate(
           Quantity,
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           "Quantity to Consume",
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BomComponent.Type, BomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
             AssemblyLine."Resource Usage Type"));
         AssemblyLine.ValidateDueDate(AsmHeader, AsmHeader."Starting Date", ShowDueDateBeforeWorkDateMessage);
@@ -1897,7 +1896,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                         TempAssemblyLine.INIT;
                         TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                         TempAssemblyLine."Document No." := AsmHeader."No.";
-                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                        TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                         TempAssemblyLine.INSERT(TRUE);
 
                         AddBOMLine2_OK32LED(AsmHeader, TempAssemblyLine, true, BomComponent, false);
@@ -2076,12 +2075,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
 
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     lrecBomComponent.Type, lrecBomComponent."Quantity per", AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure",
                                     AssemblyLine."Resource Usage Type"));
                             end;
@@ -2107,12 +2106,12 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                                 AssemblyLine.Validate("Quantity per", ldecQuantityper);
                                 AssemblyLine.Validate(
                                   Quantity,
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader.Quantity, AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
 
                                 AssemblyLine.Validate(
                                   "Quantity to Consume",
-                                  AssemblyLine.CalcQuantityFromBOM(
+                                  AssemblyLine.CalcBOMQuantity(
                                     AssemblyLine.Type, ldecQuantityper, AsmHeader."Quantity to Assemble", AsmHeader."Qty. per Unit of Measure", AssemblyLine."Resource Usage Type"));
                             end;
                         end;
@@ -2291,6 +2290,9 @@ codeunit 50003 "Ryco Assembly Line Mgt."
     end;
 
     local procedure DoVerificationsSkippedEarlier(ReplaceLinesFromBOM: Boolean; var TempNewAsmLine: Record "Assembly Line" temporary; var TempOldAsmLine: Record "Assembly Line" temporary; UpdateDimension: Boolean; NewHeaderSetID: Integer; OldHeaderSetID: Integer)
+    var
+        dimDict: Dictionary of [Integer, Code[20]];
+        dictList: List of [Dictionary of [Integer, Code[20]]];
     begin
         if TempNewAsmLine.Find('-') then
             repeat
@@ -2302,11 +2304,24 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                 TempNewAsmLine.VerifyReservationDateConflict(TempNewAsmLine);
 
                 if ReplaceLinesFromBOM then
+                    //dimDict.Add(DATABASE::Item, TempNewAsmLine."No.");
                     case TempNewAsmLine.Type of
                         TempNewAsmLine.Type::Item:
-                            TempNewAsmLine.CreateDim(DATABASE::Item, TempNewAsmLine."No.", NewHeaderSetID);
+                            begin
+                                dimDict.Add(DATABASE::Item, TempNewAsmLine."No.");
+                                dictList.add(dimDict);
+                                TempNewAsmLine.CreateDim(dictList, NewHeaderSetID);
+                                dimDict.Remove(Database::Item);
+                                dictList.RemoveAt(1);
+                            end;
                         TempNewAsmLine.Type::Resource:
-                            TempNewAsmLine.CreateDim(DATABASE::Resource, TempNewAsmLine."No.", NewHeaderSetID);
+                            begin
+                                dimDict.Add(DATABASE::Resource, TempNewAsmLine."No.");
+                                dictList.add(dimDict);
+                                TempNewAsmLine.CreateDim(dictlist, NewHeaderSetID);
+                                dimDict.Remove(Database::Resource);
+                                dictList.RemoveAt(1);
+                            end;
                     end
                 else begin
                     if UpdateDimension then
@@ -2388,7 +2403,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                             TempAssemblyLine.INIT;
                             TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                             TempAssemblyLine."Document No." := AsmHeader."No.";
-                            TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                            TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                             TempAssemblyLine.INSERT(TRUE);
                             //AddBOMLine2(AsmHeader,TempAssemblyLine,TRUE,BOMComponent,FALSE,AsmHeader."Qty. per Unit of Measure");
 
@@ -2412,7 +2427,7 @@ codeunit 50003 "Ryco Assembly Line Mgt."
                                             TempAssemblyLine.INIT;
                                             TempAssemblyLine."Document Type" := AsmHeader."Document Type";
                                             TempAssemblyLine."Document No." := AsmHeader."No.";
-                                            TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(AssemblyLine, true);
+                                            TempAssemblyLine."Line No." := AssemblyLineMgt.GetNextAsmLineNo(TempAssemblyLine, true);
                                             TempAssemblyLine.INSERT(TRUE);
 
                                             ///////////////////////////////
@@ -2520,15 +2535,15 @@ codeunit 50003 "Ryco Assembly Line Mgt."
         if AssemblyLine.Type <> AssemblyLine.Type::" " then
             AssemblyLine.Validate(
               "Quantity per",
-              AssemblyLine.CalcQuantityFromBOM(
+              AssemblyLine.CalcBOMQuantity(
                 BOMComponent.Type, BOMComponent."Quantity per", 1, QtyPerUoM, AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           Quantity,
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BOMComponent.Type, BOMComponent."Quantity per", AsmHeader.Quantity, QtyPerUoM, AssemblyLine."Resource Usage Type"));
         AssemblyLine.Validate(
           "Quantity to Consume",
-          AssemblyLine.CalcQuantityFromBOM(
+          AssemblyLine.CalcBOMQuantity(
             BOMComponent.Type, BOMComponent."Quantity per", AsmHeader."Quantity to Assemble", QtyPerUoM, AssemblyLine."Resource Usage Type"));
         AssemblyLine.ValidateDueDate(AsmHeader, AsmHeader."Starting Date", ShowDueDateBeforeWorkDateMessage);
         DueDateBeforeWorkDateMsgShown := (AssemblyLine."Due Date" < WorkDate) and ShowDueDateBeforeWorkDateMessage;
@@ -2543,6 +2558,10 @@ codeunit 50003 "Ryco Assembly Line Mgt."
         if AsmHeader."Location Code" <> '' then
             if AssemblyLine.IsInventoriableItem then
                 AssemblyLine.Validate("Location Code", AsmHeader."Location Code");
+
+        AssemblyLine."Instruction Code" := BOMComponent."Instruction Code";
+        AssemblyLine."Ink Percentage" := BOMComponent."Ink Percentage";
+        AssemblyLine.Ink := BOMComponent.Ink;
 
         //OnAfterTransferBOMComponent(AssemblyLine, BOMComponent);
 
@@ -2601,6 +2620,4 @@ codeunit 50003 "Ryco Assembly Line Mgt."
         AssemblyLine.Modify(true);
         //end;
     end;
-
 }
-

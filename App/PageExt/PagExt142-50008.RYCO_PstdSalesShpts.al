@@ -10,6 +10,39 @@ pageextension 50008 "Ryc Pstd. Sales Shpts" extends "Posted Sales Shipments"
     */
     layout
     {
+        modify("Ship-to Country/Region Code")
+        {
+            caption = 'State';
+        }
+        modify("Ship-to Post Code")
+        {
+            Caption = 'ZIP code';
+        }
+
+        modify("Document Date")
+        {
+            Visible = true;
+        }
+        modify("Ship-to code")
+        {
+            Visible = true;
+        }
+        modify("Posting Date")
+        {
+            Visible = true;
+        }
+        modify("Requested Delivery Date")
+        {
+            Visible = true;
+        }
+        modify("Shipment Date")
+        {
+            Visible = true;
+        }
+        modify("Sell-to contact")
+        {
+            Visible = true;
+        }
     }
 
     actions
@@ -35,5 +68,4 @@ pageextension 50008 "Ryc Pstd. Sales Shpts" extends "Posted Sales Shipments"
         //END add smk2018.04.09 SLUPG
         //////////////////////////////////////////
     end;
-
 }

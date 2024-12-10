@@ -9,6 +9,14 @@ pageextension 50002 "Ryc Assembly BOM" extends "Assembly BOM"
     */
     layout
     {
+        addafter("No.")
+        {
+            field("Instruction Code"; rec."Instruction Code")
+            {
+                Visible = true;
+                ApplicationArea = all;
+            }
+        }
         addafter("Resource Usage Type")
         {
             field("Ink Percentage"; Rec."Ink Percentage")
@@ -32,11 +40,13 @@ pageextension 50002 "Ryc Assembly BOM" extends "Assembly BOM"
             {
                 ApplicationArea = All;
                 DecimalPlaces = 2 : 5;
+                Caption = 'Unit Cost';
             }
             field(gItemTotCost; gItemTotCost)
             {
                 ApplicationArea = All;
                 DecimalPlaces = 2 : 5;
+                Caption = 'Total Cost';
             }
         }
         modify("No.")

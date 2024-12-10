@@ -26,7 +26,7 @@ codeunit 50001 "Low Stock Notifications"
         lrecInvSetup.Get;
         lrecInvSetup.TestField("Low Stock Notif. Email");
         if cuSendMail.ValidateEMailAdd(lrecInvSetup."Low Stock Notif. Email") then begin
-            ltxtSubject := 'Low Stock Notif.';
+            ltxtSubject := 'Low Stock Report';
             ToAddr.Add(lrecInvSetup."Low Stock Notif. Email");
             AttachmentName := 'Low Stock Report - ' + Format(Today) + '.pdf';
             cuSendMail.Rep50014_SendMail(ToAddr, ltxtSubject, ltxtBody, AttachmentName);

@@ -26,5 +26,26 @@ tableextension 50011 "RYCO Assembly Line" extends "Assembly Line"
             Caption = 'Ink';
             DataClassification = ToBeClassified;
         }
+
+        modify("Quantity to Consume")
+        {
+            trigger OnBeforeValidate()
+            var
+            begin
+                if ("Quantity to Consume" > "Remaining Quantity") then begin
+                    gRemainingQuantity := "Remaining Quantity";
+                    rec.Validate("Remaining Quantity", "Quantity to Consume");
+                end;
+            end;
+
+            trigger OnAfterValidate()
+            var
+            begin
+                rec.Validate("Remaining Quantity", gRemainingQuantity);
+            end;
+        }
     }
+
+    var
+        gRemainingQuantity: Decimal;
 }

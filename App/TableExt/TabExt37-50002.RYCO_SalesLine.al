@@ -18,8 +18,7 @@ tableextension 50002 "RYCO Sales Line" extends "Sales Line"
         {
             Caption = 'Selling Unit of Measure';
             DataClassification = ToBeClassified;
-            TableRelation = IF (Type = CONST(Item), "No." = FILTER(<> '')) "Item Unit of Measure".Code WHERE("Item No." = FIELD("No."))
-            ELSE
+            TableRelation = IF (Type = CONST(Item), "No." = FILTER(<> '')) "Item Unit of Measure".Code WHERE("Item No." = FIELD("No.")) ELSE
             IF (Type = CONST(Resource), "No." = FILTER(<> '')) "Resource Unit of Measure".Code WHERE("Resource No." = FIELD("No.")) ELSE
             "Unit of Measure";
             ValidateTableRelation = true;
@@ -60,7 +59,7 @@ tableextension 50002 "RYCO Sales Line" extends "Sales Line"
                         ELSE BEGIN
                             lrecIUoM.GET("No.", "Selling Unit of Measure");
                             "Selling Qauntity" := Quantity * lrecIUoM."1 per Qty. per Unit of Measure";
-                            GetSalesHeader;
+                            SalesHeader := GetSalesHeader;
                             PriceCalcMgt.FindSalesLinePriceSelling(SalesHeader, Rec);
                             VALIDATE("Selling Unit Price")
                         END;

@@ -3,6 +3,8 @@ report 50024 "RYCO Inventory Valuation"
     DefaultLayout = RDLC;
     RDLCLayout = './App/Layout-Rdl/Rep50024.RYCO_InventoryValuation.rdlc';
     Caption = 'Ryc Inventory Valuation';
+    ApplicationArea = All;
+    UsageCategory = ReportsAndAnalysis;
 
     dataset
     {
@@ -182,14 +184,17 @@ report 50024 "RYCO Inventory Valuation"
                     field(ShowVariants; ShowVariants)
                     {
                         Caption = 'Breakdown by Variants';
+                        ApplicationArea = All;
                     }
                     field(BreakdownByLocation; ShowLocations)
                     {
                         Caption = 'Breakdown by Location';
+                        ApplicationArea = All;
                     }
                     field(UseAdditionalReportingCurrency; ShowACY)
                     {
                         Caption = 'Use Additional Reporting Currency';
+                        ApplicationArea = All;
                     }
                 }
             }

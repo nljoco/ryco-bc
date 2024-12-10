@@ -480,15 +480,18 @@ report 50022 "RYCO Purchase Order"
                     field(NumberOfCopies; NoCopies)
                     {
                         Caption = 'Number of Copies';
+                        ApplicationArea = All;
                     }
                     field(PrintCompanyAddress; PrintCompany)
                     {
                         Caption = 'Print Company Address';
+                        ApplicationArea = All;
                     }
                     field(ArchiveDocument; ArchiveDocument)
                     {
                         Caption = 'Archive Document';
                         Enabled = ArchiveDocumentEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin
@@ -500,6 +503,7 @@ report 50022 "RYCO Purchase Order"
                     {
                         Caption = 'Log Interaction';
                         Enabled = LogInteractionEnable;
+                        ApplicationArea = All;
 
                         trigger OnValidate()
                         begin

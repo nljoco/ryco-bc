@@ -1,5 +1,9 @@
 page 50002 "Build Quantity List"
 {
+    Caption = 'Build Quantity List';
+    PageType = List;
+    ApplicationArea = all;
+    UsageCategory = Lists;
     SourceTable = "Build Quantity";
 
     layout

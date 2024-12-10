@@ -155,6 +155,7 @@ report 50011 "Suggest Sales Price from Cost"
                         {
                             Caption = 'Sales Type';
                             OptionCaption = 'Customer,Customer Price Group,All Customers,Campaign';
+                            ApplicationArea = All;
 
                             trigger OnValidate()
                             begin
@@ -171,6 +172,7 @@ report 50011 "Suggest Sales Price from Cost"
                         {
                             Caption = 'Sales Code';
                             Enabled = SalesCodeCtrlEnable;
+                            ApplicationArea = All;
 
                             trigger OnLookup(var Text: Text): Boolean
                             var
@@ -238,6 +240,7 @@ report 50011 "Suggest Sales Price from Cost"
                         {
                             Caption = 'Unit of Measure Code';
                             TableRelation = "Unit of Measure";
+                            ApplicationArea = All;
 
                             trigger OnValidate()
                             begin
@@ -249,6 +252,7 @@ report 50011 "Suggest Sales Price from Cost"
                         {
                             Caption = 'Currency Code';
                             TableRelation = Currency;
+                            ApplicationArea = All;
 
                             trigger OnValidate()
                             begin
@@ -260,17 +264,20 @@ report 50011 "Suggest Sales Price from Cost"
                         {
                             Caption = 'Starting Date';
                             Enabled = ToStartDateCtrlEnable;
+                            ApplicationArea = All;
                         }
                         field(ToEndDateCtrl; ToEndDate)
                         {
                             Caption = 'Ending Date';
                             Enabled = ToEndDateCtrlEnable;
+                            ApplicationArea = All;
                         }
                     }
                     field(OnlyPricesAbove; PriceLowerLimit)
                     {
                         Caption = 'Only Prices Above';
                         DecimalPlaces = 2 : 5;
+                        ApplicationArea = All;
                     }
                     field(AdjustmentFactor; UnitPriceFactor)
                     {
@@ -278,23 +285,28 @@ report 50011 "Suggest Sales Price from Cost"
                         DecimalPlaces = 0 : 5;
                         MinValue = 0;
                         Visible = false;
+                        ApplicationArea = All;
                     }
                     field(RoundingMethodCtrl; RoundingMethod.Code)
                     {
                         Caption = 'Rounding Method';
                         TableRelation = "Rounding Method";
+                        ApplicationArea = All;
                     }
                     field(CreateNewPrices; CreateNewPrices)
                     {
                         Caption = 'Create New Prices';
+                        ApplicationArea = All;
                     }
                     field(gdecAdjPercentage; gdecAdjPercentage)
                     {
                         Caption = 'Adjustment %';
+                        ApplicationArea = All;
                     }
                     field(gdecAdjAmount; gdecAdjAmount)
                     {
                         Caption = 'Adjustment $';
+                        ApplicationArea = All;
                     }
                 }
             }

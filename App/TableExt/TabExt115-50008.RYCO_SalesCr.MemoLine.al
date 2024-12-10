@@ -7,23 +7,20 @@ tableextension 50008 "RYCO Sales Cr. Memo Line" extends "Sales Cr.Memo Line"
     fields
     {
         // Add changes to table fields here
-        field(50000; "Selling Unit of Measure"; Code[10])
+        field(50010; "Selling Unit of Measure"; Code[10])
         {
-            CaptionML = ENU = 'Selling Unit of Measure';
+            Caption = 'Selling Unit of Measure';
             DataClassification = ToBeClassified;
         }
-        field(50001; "Selling Qauntity"; Decimal)
+        field(50020; "Selling Qauntity"; Decimal)
         {
-            CaptionML = ENU = 'Selling Quantity';
+            Caption = 'Selling Quantity';
             DataClassification = ToBeClassified;
         }
-        field(50002; "Selling Unit Price"; Decimal)
+        field(50030; "Selling Unit Price"; Decimal)
         {
-            CaptionML = ENU = 'Selling Unit Price';
+            Caption = 'Selling Unit Price';
             DataClassification = ToBeClassified;
         }
     }
-
-    var
-        myInt: Integer;
 }

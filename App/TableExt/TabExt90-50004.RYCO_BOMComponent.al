@@ -29,7 +29,7 @@ tableextension 50004 "RYCO BOM Component" extends "BOM Component"
             var
             begin
                 // nj20160429 - Start
-                IF PAGE.RUNMODAL(0, grecBOMInstruction) = ACTION::LookupOK THEN BEGIN
+                IF PAGE.RUNMODAL(50001, grecBOMInstruction) = ACTION::LookupOK THEN BEGIN
                     "Instruction Code" := grecBOMInstruction.Code;
                     Description := grecBOMInstruction.Description;
                 END;
@@ -41,6 +41,7 @@ tableextension 50004 "RYCO BOM Component" extends "BOM Component"
             //nj20160429
             Caption = 'Ink Percentage';
             DataClassification = ToBeClassified;
+            DecimalPlaces = 0 : 5;
 
             trigger OnValidate()
             var

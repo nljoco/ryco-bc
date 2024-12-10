@@ -10,22 +10,20 @@ tableextension 50006 "RYCO Sales Shipment Line" extends "Sales Shipment Line"
         // Add changes to table fields here
         field(50010; "Selling Unit of Measure"; Code[10])
         {
-            CaptionML = ENU = 'Selling Unit of Measure';
+            Caption = 'Selling Unit of Measure';
             DataClassification = ToBeClassified;
 
         }
         field(50020; "Selling Qauntity"; Decimal)
         {
-            CaptionML = ENU = 'Selling Quantity';
+            Caption = 'Selling Quantity';
             DataClassification = ToBeClassified;
+            //Enabled = False;
         }
         field(50030; "Selling Unit Price"; Decimal)
         {
-            CaptionML = ENU = 'Selling Unit Price';
+            Caption = 'Selling Unit Price';
             DataClassification = ToBeClassified;
         }
     }
-
-    var
-        myInt: Integer;
 }
